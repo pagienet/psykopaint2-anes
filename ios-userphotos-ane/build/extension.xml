@@ -1,0 +1,15 @@
+<extension xmlns="http://ns.adobe.com/air/extension/3.6">
+    <id>net.psykosoft.photos</id>
+    <versionNumber>0.0.2</versionNumber>
+    <platforms>
+		<platform name="iPhone-ARM">
+            <applicationDeployment>
+                <nativeLibrary>libUserPhotosExtension.a</nativeLibrary>
+                <initializer>UserPhotosExtensionInitializer</initializer>
+            </applicationDeployment>
+        </platform>
+        <platform name="default">
+            <applicationDeployment/>
+        </platform>
+    </platforms>
+</extension>

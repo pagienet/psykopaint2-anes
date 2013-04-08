@@ -1,0 +1,15 @@
+<extension xmlns="http://ns.adobe.com/air/extension/3.6">
+    <id>net.psykosoft.notifications</id>
+    <versionNumber>0.0.1</versionNumber>
+    <platforms>
+		<platform name="iPhone-ARM">
+            <applicationDeployment>
+                <nativeLibrary>libNotificationsExtension.a</nativeLibrary>
+                <initializer>NotificationsExtensionInitializer</initializer>
+            </applicationDeployment>
+        </platform>
+        <platform name="default">
+            <applicationDeployment/>
+        </platform>
+    </platforms>
+</extension>
