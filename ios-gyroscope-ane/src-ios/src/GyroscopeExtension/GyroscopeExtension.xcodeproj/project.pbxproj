@@ -1,0 +1,252 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C05172417465CEB009FA62C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C05172317465CEB009FA62C /* Foundation.framework */; };
+		8C05172B17465CEB009FA62C /* GyroscopeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C05172A17465CEB009FA62C /* GyroscopeExtension.m */; };
+		8C05173317466EE8009FA62C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C05173217466EE8009FA62C /* CoreMotion.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8C05171E17465CEB009FA62C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8C05172017465CEB009FA62C /* libGyroscopeExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGyroscopeExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C05172317465CEB009FA62C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8C05172717465CEB009FA62C /* GyroscopeExtension-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GyroscopeExtension-Prefix.pch"; sourceTree = "<group>"; };
+		8C05172A17465CEB009FA62C /* GyroscopeExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GyroscopeExtension.m; sourceTree = "<group>"; };
+		8C05173117466443009FA62C /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
+		8C05173217466EE8009FA62C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C05171D17465CEB009FA62C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C05173317466EE8009FA62C /* CoreMotion.framework in Frameworks */,
+				8C05172417465CEB009FA62C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C05171717465CEB009FA62C = {
+			isa = PBXGroup;
+			children = (
+				8C05173217466EE8009FA62C /* CoreMotion.framework */,
+				8C05172517465CEB009FA62C /* GyroscopeExtension */,
+				8C05172217465CEB009FA62C /* Frameworks */,
+				8C05172117465CEB009FA62C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C05172117465CEB009FA62C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C05172017465CEB009FA62C /* libGyroscopeExtension.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C05172217465CEB009FA62C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C05172317465CEB009FA62C /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C05172517465CEB009FA62C /* GyroscopeExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8C05172A17465CEB009FA62C /* GyroscopeExtension.m */,
+				8C05173117466443009FA62C /* FlashRuntimeExtensions.h */,
+				8C05172617465CEB009FA62C /* Supporting Files */,
+			);
+			path = GyroscopeExtension;
+			sourceTree = "<group>";
+		};
+		8C05172617465CEB009FA62C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C05172717465CEB009FA62C /* GyroscopeExtension-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C05171F17465CEB009FA62C /* GyroscopeExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C05172E17465CEB009FA62C /* Build configuration list for PBXNativeTarget "GyroscopeExtension" */;
+			buildPhases = (
+				8C05171C17465CEB009FA62C /* Sources */,
+				8C05171D17465CEB009FA62C /* Frameworks */,
+				8C05171E17465CEB009FA62C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GyroscopeExtension;
+			productName = GyroscopeExtension;
+			productReference = 8C05172017465CEB009FA62C /* libGyroscopeExtension.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C05171817465CEB009FA62C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Psykosoft;
+			};
+			buildConfigurationList = 8C05171B17465CEB009FA62C /* Build configuration list for PBXProject "GyroscopeExtension" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8C05171717465CEB009FA62C;
+			productRefGroup = 8C05172117465CEB009FA62C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C05171F17465CEB009FA62C /* GyroscopeExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C05171C17465CEB009FA62C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C05172B17465CEB009FA62C /* GyroscopeExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8C05172C17465CEB009FA62C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8C05172D17465CEB009FA62C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C05172F17465CEB009FA62C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/GyroscopeExtension.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GyroscopeExtension/GyroscopeExtension-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = "/Users/palebluedot/Documents/Projects/PsykoPaint/repositories/base/psykopaint2-anes/ios-gyroscope-ane/src-ios/build";
+			};
+			name = Debug;
+		};
+		8C05173017465CEB009FA62C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/GyroscopeExtension.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GyroscopeExtension/GyroscopeExtension-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = "/Users/palebluedot/Documents/Projects/PsykoPaint/repositories/base/psykopaint2-anes/ios-gyroscope-ane/src-ios/build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C05171B17465CEB009FA62C /* Build configuration list for PBXProject "GyroscopeExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C05172C17465CEB009FA62C /* Debug */,
+				8C05172D17465CEB009FA62C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C05172E17465CEB009FA62C /* Build configuration list for PBXNativeTarget "GyroscopeExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C05172F17465CEB009FA62C /* Debug */,
+				8C05173017465CEB009FA62C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C05171817465CEB009FA62C /* Project object */;
+}
