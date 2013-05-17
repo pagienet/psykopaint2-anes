@@ -18,13 +18,14 @@ FREObject gyroext_startReadings( FREContext ctx, void* funcData, uint32_t argc, 
             CMGyroHandler gyroHandler = ^ ( CMGyroData *gyroData, NSError *error ) {
                 if( ctx != nil ) {
                     CMRotationRate rotate = gyroData.rotationRate;
-                    NSString *myStr = [ NSString stringWithFormat:@"%f&%f&%f&%f&%f&%f",
+                    CMRotationMatrix matrix = motionManager.deviceMotion.attitude.rotationMatrix;
+                    NSString *myStr = [ NSString stringWithFormat:@"%f&%f&%f&%f&%f&%f&%f&%f&%f&%f&%f&%f",
                                        rotate.x,
                                        rotate.y,
                                        rotate.z,
-                                       motionManager.deviceMotion.attitude.roll,
-                                       motionManager.deviceMotion.attitude.pitch,
-                                       motionManager.deviceMotion.attitude.yaw ];
+                                       matrix.m11, matrix.m12, matrix.m13,
+                                       matrix.m21, matrix.m22, matrix.m23,
+                                       matrix.m31, matrix.m32, matrix.m33 ];
                     if( ctx != nil ) {
 //                        NSLog( @"Redings: %@", myStr );
                         FREDispatchStatusEventAsync( ctx, (uint8_t*)"gyroscope/reading", (uint8_t*)[ myStr UTF8String ] );

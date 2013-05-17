@@ -2,29 +2,23 @@ package net.psykosoft.gyroscope.events
 {
 
 	import flash.events.Event;
+	import flash.geom.Matrix3D;
+	import flash.geom.Vector3D;
 
 	public class GyroscopeExtensionEvent extends Event
 	{
 		public static const READING:String = "gyroscope/reading";
 
-		public var rotationRateX:Number;
-		public var rotationRateY:Number;
-		public var rotationRateZ:Number;
-		public var roll:Number;
-		public var pitch:Number;
-		public var yaw:Number;
+		public var rotationRate:Vector3D;
+		public var rotationMatrix:Matrix3D;
 
 		public function GyroscopeExtensionEvent(
 				type:String,
-				rotationRateX:Number, rotationRateY:Number, rotationRateZ:Number,
-				roll:Number, pitch:Number, yaw:Number,
+				rotationRate:Vector3D,
+				rotationMatrix:Matrix3D,
 				bubble:Boolean = false, cancelable:Boolean = false ) {
-			this.rotationRateX = rotationRateX;
-			this.rotationRateY = rotationRateY;
-			this.rotationRateZ = rotationRateZ;
-			this.roll = roll;
-			this.pitch = pitch;
-			this.yaw = yaw;
+			this.rotationRate = rotationRate;
+			this.rotationMatrix = rotationMatrix;
 			super( type, bubble, cancelable );
 		}
 	}
