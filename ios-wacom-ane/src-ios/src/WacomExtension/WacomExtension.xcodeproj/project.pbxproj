@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C0B94B21765FF11007AF5E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B94B11765FF11007AF5E7 /* Foundation.framework */; };
+		8C0B94B91765FF11007AF5E7 /* WacomExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0B94B81765FF11007AF5E7 /* WacomExtension.m */; };
+		8C0B94CA17660FEE007AF5E7 /* libWacomStylusFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B94C617660FEE007AF5E7 /* libWacomStylusFramework.a */; };
+		8C0B94CC17661012007AF5E7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B94CB17661012007AF5E7 /* CoreBluetooth.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8C0B94AC1765FF10007AF5E7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8C0B94AE1765FF10007AF5E7 /* libWacomExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWacomExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0B94B11765FF11007AF5E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8C0B94B51765FF11007AF5E7 /* WacomExtension-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WacomExtension-Prefix.pch"; sourceTree = "<group>"; };
+		8C0B94B81765FF11007AF5E7 /* WacomExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WacomExtension.m; sourceTree = "<group>"; };
+		8C0B94BF1765FF7A007AF5E7 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
+		8C0B94C417660FEE007AF5E7 /* LeDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDiscovery.h; sourceTree = "<group>"; };
+		8C0B94C517660FEE007AF5E7 /* LeWacomStylusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeWacomStylusService.h; sourceTree = "<group>"; };
+		8C0B94C617660FEE007AF5E7 /* libWacomStylusFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWacomStylusFramework.a; sourceTree = "<group>"; };
+		8C0B94C717660FEE007AF5E7 /* TrackedTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackedTouch.h; sourceTree = "<group>"; };
+		8C0B94C817660FEE007AF5E7 /* WacomDeviceFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WacomDeviceFramework.h; sourceTree = "<group>"; };
+		8C0B94C917660FEE007AF5E7 /* WacomDeviceFrameworkTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WacomDeviceFrameworkTypes.h; sourceTree = "<group>"; };
+		8C0B94CB17661012007AF5E7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		8C0B94CD17661566007AF5E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8C0B94CF1766163B007AF5E7 /* WacomExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WacomExtension.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C0B94AB1765FF10007AF5E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0B94CC17661012007AF5E7 /* CoreBluetooth.framework in Frameworks */,
+				8C0B94B21765FF11007AF5E7 /* Foundation.framework in Frameworks */,
+				8C0B94CA17660FEE007AF5E7 /* libWacomStylusFramework.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C0B94A51765FF10007AF5E7 = {
+			isa = PBXGroup;
+			children = (
+				8C0B94CD17661566007AF5E7 /* UIKit.framework */,
+				8C0B94CB17661012007AF5E7 /* CoreBluetooth.framework */,
+				8C0B94B31765FF11007AF5E7 /* WacomExtension */,
+				8C0B94B01765FF10007AF5E7 /* Frameworks */,
+				8C0B94AF1765FF10007AF5E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C0B94AF1765FF10007AF5E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C0B94AE1765FF10007AF5E7 /* libWacomExtension.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C0B94B01765FF10007AF5E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C0B94B11765FF11007AF5E7 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C0B94B31765FF11007AF5E7 /* WacomExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8C0B94C317660FEE007AF5E7 /* SDK */,
+				8C0B94BF1765FF7A007AF5E7 /* FlashRuntimeExtensions.h */,
+				8C0B94CF1766163B007AF5E7 /* WacomExtension.h */,
+				8C0B94B81765FF11007AF5E7 /* WacomExtension.m */,
+				8C0B94B41765FF11007AF5E7 /* Supporting Files */,
+			);
+			path = WacomExtension;
+			sourceTree = "<group>";
+		};
+		8C0B94B41765FF11007AF5E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C0B94B51765FF11007AF5E7 /* WacomExtension-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C0B94C317660FEE007AF5E7 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8C0B94C417660FEE007AF5E7 /* LeDiscovery.h */,
+				8C0B94C517660FEE007AF5E7 /* LeWacomStylusService.h */,
+				8C0B94C617660FEE007AF5E7 /* libWacomStylusFramework.a */,
+				8C0B94C717660FEE007AF5E7 /* TrackedTouch.h */,
+				8C0B94C817660FEE007AF5E7 /* WacomDeviceFramework.h */,
+				8C0B94C917660FEE007AF5E7 /* WacomDeviceFrameworkTypes.h */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C0B94AD1765FF10007AF5E7 /* WacomExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C0B94BC1765FF11007AF5E7 /* Build configuration list for PBXNativeTarget "WacomExtension" */;
+			buildPhases = (
+				8C0B94AA1765FF10007AF5E7 /* Sources */,
+				8C0B94AB1765FF10007AF5E7 /* Frameworks */,
+				8C0B94AC1765FF10007AF5E7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WacomExtension;
+			productName = WacomExtension;
+			productReference = 8C0B94AE1765FF10007AF5E7 /* libWacomExtension.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C0B94A61765FF10007AF5E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Psykosoft;
+			};
+			buildConfigurationList = 8C0B94A91765FF10007AF5E7 /* Build configuration list for PBXProject "WacomExtension" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8C0B94A51765FF10007AF5E7;
+			productRefGroup = 8C0B94AF1765FF10007AF5E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C0B94AD1765FF10007AF5E7 /* WacomExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C0B94AA1765FF10007AF5E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C0B94B91765FF11007AF5E7 /* WacomExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8C0B94BA1765FF11007AF5E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8C0B94BB1765FF11007AF5E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C0B94BD1765FF11007AF5E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/WacomExtension.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WacomExtension/WacomExtension-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/WacomExtension/SDK\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = "/Users/palebluedot/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-wacom-ane/src-ios/build";
+			};
+			name = Debug;
+		};
+		8C0B94BE1765FF11007AF5E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/WacomExtension.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WacomExtension/WacomExtension-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/WacomExtension/SDK\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = "/Users/palebluedot/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-wacom-ane/src-ios/build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C0B94A91765FF10007AF5E7 /* Build configuration list for PBXProject "WacomExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0B94BA1765FF11007AF5E7 /* Debug */,
+				8C0B94BB1765FF11007AF5E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C0B94BC1765FF11007AF5E7 /* Build configuration list for PBXNativeTarget "WacomExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C0B94BD1765FF11007AF5E7 /* Debug */,
+				8C0B94BE1765FF11007AF5E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C0B94A61765FF10007AF5E7 /* Project object */;
+}
