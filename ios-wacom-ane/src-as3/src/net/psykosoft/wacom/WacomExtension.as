@@ -1,7 +1,6 @@
 package net.psykosoft.wacom
 {
 
-	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.events.StatusEvent;
 	import flash.external.ExtensionContext;

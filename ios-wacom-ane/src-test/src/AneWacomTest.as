@@ -22,7 +22,12 @@ package
 			_extension.addEventListener( WacomExtensionEvent.BUTTON_1_RELEASED, onButton1Released );
 			_extension.addEventListener( WacomExtensionEvent.BUTTON_2_RELEASED, onButton2Released );
 			_extension.addEventListener( WacomExtensionEvent.PRESSURE_CHANGED, onPressureChanged );
+			_extension.addEventListener( WacomExtensionEvent.DISCOVERY_IS_OFF, onDiscoveryOff );
 			_extension.initialize();
+		}
+
+		private function onDiscoveryOff( event:WacomExtensionEvent ):void {
+			trace( this, "Cannot connect to device because bluetooth or bluetooth discovery is off on iPad." );
 		}
 
 		private function onBatteryLevelChanged( event:WacomExtensionEvent ):void {

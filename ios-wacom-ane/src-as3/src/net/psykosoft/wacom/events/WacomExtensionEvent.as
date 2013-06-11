@@ -11,6 +11,7 @@ package net.psykosoft.wacom.events
 		public static const BUTTON_2_PRESSED:String = "wacom/button_2_pressed";
 		public static const BUTTON_1_RELEASED:String = "wacom/button_1_released";
 		public static const BUTTON_2_RELEASED:String = "wacom/button_2_released";
+		public static const DISCOVERY_IS_OFF:String = "wacom/discovery_off";
 
 		public var data:Number;
 

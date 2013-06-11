@@ -42,7 +42,9 @@ static WacomExtension *instance = nil;
 }
 
 -(void)stylusEvent:(WacomStylusEvent *)stylusEvent {
-    switch ( [ stylusEvent getType ] ) {
+    int type = [ stylusEvent getType ];
+    NSLog( @"WacomExtansion - stylusEvent(), type: %u", type );
+    switch ( type ) {
         case eStylusEventType_BatteryLevelChanged: {
             NSString *batteryStr = [ NSString stringWithFormat:@"%u", [ stylusEvent getBatteryLevel ] ];
             FREDispatchStatusEventAsync( WacomExtensionCtx, (uint8_t*)"wacom/battery_level_changed", (uint8_t*)[ batteryStr UTF8String ] );
@@ -60,7 +62,7 @@ static WacomExtension *instance = nil;
                     break;
                 }
                 case 2: {
-                     FREDispatchStatusEventAsync( WacomExtensionCtx, (uint8_t*)"wacom/button_2_pressed", (uint8_t*)[ @"" UTF8String ] );
+                    FREDispatchStatusEventAsync( WacomExtensionCtx, (uint8_t*)"wacom/button_2_pressed", (uint8_t*)[ @"" UTF8String ] );
                     break;
                 }
             }
@@ -77,8 +79,13 @@ static WacomExtension *instance = nil;
                     break;
                 }
             }
+            break;
         }
     }
+}
+
+-(void)discoveryStatePoweredOff {
+	FREDispatchStatusEventAsync( WacomExtensionCtx, (uint8_t*)"wacom/discovery_off", (uint8_t*)[ @"" UTF8String ] );
 }
 
 @end
