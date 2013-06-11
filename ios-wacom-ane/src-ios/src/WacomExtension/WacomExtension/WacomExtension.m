@@ -43,7 +43,7 @@ static WacomExtension *instance = nil;
 
 -(void)stylusEvent:(WacomStylusEvent *)stylusEvent {
     int type = [ stylusEvent getType ];
-    NSLog( @"WacomExtansion - stylusEvent(), type: %u", type );
+    NSLog( @"WacomExtension - stylusEvent(), type: %u", type );
     switch ( type ) {
         case eStylusEventType_BatteryLevelChanged: {
             NSString *batteryStr = [ NSString stringWithFormat:@"%u", [ stylusEvent getBatteryLevel ] ];
