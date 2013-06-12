@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		8C0B94B21765FF11007AF5E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B94B11765FF11007AF5E7 /* Foundation.framework */; };
 		8C0B94B91765FF11007AF5E7 /* WacomExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0B94B81765FF11007AF5E7 /* WacomExtension.m */; };
-		8C0B94CA17660FEE007AF5E7 /* libWacomStylusFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B94C617660FEE007AF5E7 /* libWacomStylusFramework.a */; };
 		8C0B94CC17661012007AF5E7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0B94CB17661012007AF5E7 /* CoreBluetooth.framework */; };
+		8C3228E21768A406004962BD /* libWacomStylusFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3228DE1768A406004962BD /* libWacomStylusFramework.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,15 +31,15 @@
 		8C0B94B51765FF11007AF5E7 /* WacomExtension-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WacomExtension-Prefix.pch"; sourceTree = "<group>"; };
 		8C0B94B81765FF11007AF5E7 /* WacomExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WacomExtension.m; sourceTree = "<group>"; };
 		8C0B94BF1765FF7A007AF5E7 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
-		8C0B94C417660FEE007AF5E7 /* LeDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDiscovery.h; sourceTree = "<group>"; };
-		8C0B94C517660FEE007AF5E7 /* LeWacomStylusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeWacomStylusService.h; sourceTree = "<group>"; };
-		8C0B94C617660FEE007AF5E7 /* libWacomStylusFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWacomStylusFramework.a; sourceTree = "<group>"; };
-		8C0B94C717660FEE007AF5E7 /* TrackedTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackedTouch.h; sourceTree = "<group>"; };
-		8C0B94C817660FEE007AF5E7 /* WacomDeviceFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WacomDeviceFramework.h; sourceTree = "<group>"; };
-		8C0B94C917660FEE007AF5E7 /* WacomDeviceFrameworkTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WacomDeviceFrameworkTypes.h; sourceTree = "<group>"; };
 		8C0B94CB17661012007AF5E7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8C0B94CD17661566007AF5E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8C0B94CF1766163B007AF5E7 /* WacomExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WacomExtension.h; sourceTree = "<group>"; };
+		8C3228DC1768A406004962BD /* LeDiscovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeDiscovery.h; sourceTree = "<group>"; };
+		8C3228DD1768A406004962BD /* LeWacomStylusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeWacomStylusService.h; sourceTree = "<group>"; };
+		8C3228DE1768A406004962BD /* libWacomStylusFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWacomStylusFramework.a; sourceTree = "<group>"; };
+		8C3228DF1768A406004962BD /* TrackedTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackedTouch.h; sourceTree = "<group>"; };
+		8C3228E01768A406004962BD /* WacomDeviceFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WacomDeviceFramework.h; sourceTree = "<group>"; };
+		8C3228E11768A406004962BD /* WacomDeviceFrameworkTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WacomDeviceFrameworkTypes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 			files = (
 				8C0B94CC17661012007AF5E7 /* CoreBluetooth.framework in Frameworks */,
 				8C0B94B21765FF11007AF5E7 /* Foundation.framework in Frameworks */,
-				8C0B94CA17660FEE007AF5E7 /* libWacomStylusFramework.a in Frameworks */,
+				8C3228E21768A406004962BD /* libWacomStylusFramework.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 		8C0B94B31765FF11007AF5E7 /* WacomExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8C0B94C317660FEE007AF5E7 /* SDK */,
+				8C3228DB1768A406004962BD /* SDK */,
 				8C0B94BF1765FF7A007AF5E7 /* FlashRuntimeExtensions.h */,
 				8C0B94CF1766163B007AF5E7 /* WacomExtension.h */,
 				8C0B94B81765FF11007AF5E7 /* WacomExtension.m */,
@@ -103,15 +103,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8C0B94C317660FEE007AF5E7 /* SDK */ = {
+		8C3228DB1768A406004962BD /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				8C0B94C417660FEE007AF5E7 /* LeDiscovery.h */,
-				8C0B94C517660FEE007AF5E7 /* LeWacomStylusService.h */,
-				8C0B94C617660FEE007AF5E7 /* libWacomStylusFramework.a */,
-				8C0B94C717660FEE007AF5E7 /* TrackedTouch.h */,
-				8C0B94C817660FEE007AF5E7 /* WacomDeviceFramework.h */,
-				8C0B94C917660FEE007AF5E7 /* WacomDeviceFrameworkTypes.h */,
+				8C3228DC1768A406004962BD /* LeDiscovery.h */,
+				8C3228DD1768A406004962BD /* LeWacomStylusService.h */,
+				8C3228DE1768A406004962BD /* libWacomStylusFramework.a */,
+				8C3228DF1768A406004962BD /* TrackedTouch.h */,
+				8C3228E01768A406004962BD /* WacomDeviceFramework.h */,
+				8C3228E11768A406004962BD /* WacomDeviceFrameworkTypes.h */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
