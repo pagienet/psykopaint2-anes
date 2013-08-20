@@ -15,13 +15,6 @@ void notifyLibraryItemsRetrieved() {
     FREDispatchStatusEventAsync( eventContext, eventCode, eventCode );
 }
 
-void notifySpriteSheetReady() {
-    //NSLog(@"notifySpriteSheetReady");
-    NSString *eventName = @"sprite/sheet/ready";
-    const uint8_t* eventCode = (const uint8_t*) [eventName UTF8String];
-    FREDispatchStatusEventAsync( eventContext, eventCode, eventCode );
-}
-
 void paintImageIntoBitmapData( FREBitmapData *bmd, CGImageRef imageRef, int offX, int offY ) {
     
     // TODO: offsets are no longer used, remove to simplify code.
@@ -72,106 +65,6 @@ void paintImageIntoBitmapData( FREBitmapData *bmd, CGImageRef imageRef, int offX
     free( rawData );
 }
 
-void paintSheet( FREBitmapData *bmd, int toIndex, int fromIndex, int sheetSize, int thumbSize ) {
-    
-    // Retrieve first thumbnail in order to use the same image properties in the context below.
-    CGImageRef thumbnail = [ thumbnails objectAtIndex: 0 ];
-    CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo( thumbnail );
-    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo( thumbnail );
-    size_t bitsPerComponent = CGImageGetBitsPerComponent( thumbnail );
-    size_t bitsPerPixel = CGImageGetBitsPerPixel( thumbnail );
-    size_t bytesPerRow = sheetSize * bitsPerPixel / 8; //CGImageGetBytesPerRow( thumbnail );
-//    NSLog(@"thumbs bits per compoment: %zd", bitsPerComponent );
-//    NSLog(@"thumbs bits per pixel: %zd", bitsPerPixel );
-//    NSLog(@"thumbs bytes per row: %zd", bytesPerRow );
-//    NSLog(@"thumbs alpha type: %u", alphaInfo );
-//    NSLog(@"thumbs bitmap type: %u", bitmapInfo );
-    
-    // Initialize the drawing context.
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate( NULL, sheetSize, sheetSize,
-                                                 bitsPerComponent, bytesPerRow, colorSpace,
-                                                 bitmapInfo );
-//    NSLog(@"context created: %@", context);
-    CGColorSpaceRelease( colorSpace );
-    
-    // Sweep library items.
-    int offX = 0;
-    int offY = 0;
-    int numThumbs = toIndex - fromIndex;
-    CGRect rect = CGRectMake( 0, 0, thumbSize, thumbSize );
-    for( int i = 0; i < numThumbs; ++i ) {
-        
-        // Id thumbnail.
-        thumbnail = [ thumbnails objectAtIndex: fromIndex + i ];
-        //        NSLog(@"thumb: %@ ------------------------", thumbnail);
-        //        NSLog(@"position: %u, %u", offX, offY);
-        
-        // Draw into context.
-        rect.origin.x = offX;
-        rect.origin.y = -offY + sheetSize - thumbSize; // Quartz coordinate system is inverted in Y.
-        CGContextDrawImage( context, rect, thumbnail );
-        
-        // Advance in grid pattern.
-        if( offX + thumbSize < sheetSize - thumbSize ) {
-            offX += thumbSize;
-        }
-        else {
-            offX = 0;
-            offY += thumbSize;
-        }
-    }
-    
-    // Get an image from the context.
-    CGImageRef contextCgImage = CGBitmapContextCreateImage( context );
-    paintImageIntoBitmapData( bmd, contextCgImage, 0, 0 );
-    
-    CGContextRelease( context );
-    
-}
-
-#pragma mark - Multiple thumbnail retrieval
-
-/*
- Receives a bitmap data and attempts to fill it with thumbnails.
- */
-FREObject getThumbnailSheetFromIndexToIndex(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
-    
-    // Parameter: index.
-    uint32_t fromIndex;
-    FREGetObjectAsUint32( argv[ 0 ], &fromIndex );
-    
-    // Parameter: index.
-    uint32_t toIndex;
-    FREGetObjectAsUint32( argv[ 1 ], &toIndex );
-    
-    // Parameter: thumb size.
-    uint32_t thumbSize;
-    FREGetObjectAsUint32( argv[ 2 ], &thumbSize );
-    
-    // Parameter: sheet size.
-    uint32_t sheetSize;
-    FREGetObjectAsUint32( argv[ 3 ], &sheetSize );
-    
-    // Parameter: AS3 BitmapData object.
-    FREBitmapData bmd;
-    FREAcquireBitmapData( argv[ 4 ], &bmd );
-    
-    // Paint sheet.
-    dispatch_async( dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0 ), ^{
-        paintSheet( &bmd, toIndex, fromIndex, sheetSize, thumbSize );
-        notifySpriteSheetReady();
-    } );
-    
-    // Tell Flash which region of the bitmapData changes (all of it here)
-    FREInvalidateBitmapDataRect( argv[ 4 ], 0, 0, bmd.width, bmd.height );
-    
-    // Release our control over the bitmapData
-    FREReleaseBitmapData( argv[ 4 ] );
-    
-    return NULL;
-}
-
 #pragma mark - Single image retrieval
 
 FREObject getThumbnailAtIndex(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
@@ -186,7 +79,7 @@ FREObject getThumbnailAtIndex(FREContext ctx, void* funcData, uint32_t argc, FRE
     
     // Identify the asset for this index.
     ALAsset *asset = [ libraryItems objectAtIndex: index ];
-    CGImageRef thumbnail = [ asset thumbnail ];
+    CGImageRef thumbnail = [ asset aspectRatioThumbnail];
     
     // Paint the bmd.
     paintImageIntoBitmapData( &bmd, thumbnail, 0, 0 );
@@ -230,11 +123,33 @@ FREObject getFullImageAtIndex(FREContext ctx, void* funcData, uint32_t argc, FRE
 #pragma mark - Asset info
 
 FREObject getNumberOfLibraryItems(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
-    // Library item count from float to FREOBject.
     float num = libraryItems.count;
     FREObject numFre = nil;
     FRENewObjectFromDouble(num, &numFre);
     return numFre;
+}
+
+FREObject getThumbDimensionsAtIndex(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
+    
+    // Input index parameter from FREObject to uint32.
+    uint32_t index;
+    FREGetObjectAsUint32( argv[ 0 ], &index );
+    
+    // Identify thumbnail dimensions and put them into a string with format "widthxheight".
+    ALAsset *asset = [libraryItems objectAtIndex: index ];
+    CGImageRef thumb = [ asset aspectRatioThumbnail ];
+    NSUInteger width = CGImageGetWidth( thumb );
+    NSUInteger height = CGImageGetHeight( thumb );
+    NSString *wStr = [ NSString stringWithFormat:@"%d", width ];
+    NSString *hStr = [ NSString stringWithFormat:@"%d", height ];
+    NSMutableString *msg = [ NSMutableString stringWithFormat:@"%@x%@", wStr, hStr ];
+    
+    // Translate for as3.
+    const char *str = [ msg UTF8String ]; // Convert Obj-C string to C UTF8String
+    FREObject msgAs3;
+    FRENewObjectFromUTF8( strlen(str) + 1, (const uint8_t*)str, &msgAs3 );
+    
+    return msgAs3;
 }
 
 FREObject getFullImageDimensionsAtIndex(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
@@ -275,6 +190,8 @@ FREObject initialize(FREContext ctx, void* funcData, uint32_t argc, FREObject ar
     
     eventContext = ctx;
     
+    NSLog(@"UserPhotosExtension - initializing...");
+    
     // Prepare an asset collector and get a reference to the asset library.
     NSMutableArray *assetCollector = [ [ NSMutableArray alloc ] initWithCapacity:0 ];
     NSMutableArray *thumbnailCollector = [ [ NSMutableArray alloc ] initWithCapacity:0 ];
@@ -288,8 +205,8 @@ FREObject initialize(FREContext ctx, void* funcData, uint32_t argc, FREObject ar
             [ group enumerateAssetsUsingBlock:^(ALAsset *asset, NSUInteger index, BOOL *stop) {
                 if( asset ) {
                     [ assetCollector addObject:asset ];
-                    [ thumbnailCollector addObject:asset.thumbnail ];
-                    // NSLog(@"asset retrieved: %@", asset);
+                    CGImageRef thumb = asset.aspectRatioThumbnail;
+                    [ thumbnailCollector addObject:(id)thumb ];
                 }
             } ];
             // All assets retrieved.
@@ -299,7 +216,7 @@ FREObject initialize(FREContext ctx, void* funcData, uint32_t argc, FREObject ar
         }
     }
     failureBlock:^(NSError *error) {
-        NSLog(@"UserPhotosExtension.m - Error retrieving users media library items.");
+        NSLog(@"UserPhotosExtension - Error retrieving users media library items.");
     } ];
     
     return NULL;
@@ -337,9 +254,9 @@ void UserPhotosExtensionContextInitializer(void* extData, const uint8_t* ctxType
     func[ 5 ].functionData = NULL;
     func[ 5 ].function = &releaseLibraryItems;
     
-    func[ 6 ].name = (const uint8_t*) "getThumbnailSheetFromIndexToIndex";
+    func[ 6 ].name = (const uint8_t*) "getThumbDimensionsAtIndex";
     func[ 6 ].functionData = NULL;
-    func[ 6 ].function = &getThumbnailSheetFromIndexToIndex;
+    func[ 6 ].function = &getThumbDimensionsAtIndex;
     
     /* DO NOT FORGET TO INCREASE numFunctionsToTest! - AND make sure indices are right */
     

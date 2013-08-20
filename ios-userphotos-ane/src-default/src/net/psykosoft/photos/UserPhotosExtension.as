@@ -3,11 +3,8 @@ package net.psykosoft.photos
 
 	import flash.display.BitmapData;
 	import flash.geom.Point;
-	import flash.events.EventDispatcher;
 
-	import net.psykosoft.photos.data.SheetVO;
-
-	public class UserPhotosExtension extends EventDispatcher
+	public class UserPhotosExtension
 	{
 		public function UserPhotosExtension() {
 			super();
@@ -21,6 +18,10 @@ package net.psykosoft.photos
 			
 		}
 
+		public function getThumbDimensionsAtIndex():Point {
+			return new Point();
+		}
+
 		public function getNumberOfLibraryItems():Number {
 			return 0;	
 		}
@@ -29,16 +30,12 @@ package net.psykosoft.photos
 			return new Point();	
 		}
 
- 		public function getThumbnailAtIndex( index:uint, thumbSize:uint ):BitmapData {
+ 		public function getThumbnailAtIndex( index:uint ):BitmapData {
 			return new BitmapData( 32, 32, false, 0 );	
 		}
 
 		public function getFullImageAtIndex( index:uint ):BitmapData {
 			return new BitmapData( 32, 32, false, 0 );		
-		}
-
-		public function getThumbnailSheetFromIndexToIndex( fromIndex:uint, toIndex:uint, thumbSize:uint ):SheetVO {
-			return new SheetVO();
 		}
 	}
 }

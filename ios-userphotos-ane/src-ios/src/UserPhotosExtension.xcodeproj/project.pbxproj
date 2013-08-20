@@ -209,7 +209,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SYMROOT = "/Users/palebluedot/Documents/Projects/PsykoPaint/repositories/base/ios-userphotos-ane/src-ios/build";
+				SYMROOT = "/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-userphotos-ane/src-ios/build";
 			};
 			name = Debug;
 		};
@@ -223,7 +223,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SYMROOT = "/Users/palebluedot/Documents/Projects/PsykoPaint/repositories/base/ios-userphotos-ane/src-ios/build";
+				SYMROOT = "/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-userphotos-ane/src-ios/build";
 			};
 			name = Release;
 		};

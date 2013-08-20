@@ -2,20 +2,25 @@ package net.psykosoft.photos
 {
 
 	import flash.display.BitmapData;
-	import flash.events.EventDispatcher;
 	import flash.events.StatusEvent;
 	import flash.external.ExtensionContext;
 	import flash.geom.Point;
 
-	import net.psykosoft.photos.data.SheetVO;
-	import net.psykosoft.photos.events.UserPhotosExtensionEvent;
+	import org.osflash.signals.Signal;
 
-	public class UserPhotosExtension extends EventDispatcher
+	public class UserPhotosExtension
 	{
 		private var _context:ExtensionContext;
+		private var _point:Point;
+
+		public var libraryReadySignal:Signal;
 
 		public function UserPhotosExtension() {
 			super();
+
+			// Init vars.
+			libraryReadySignal = new Signal();
+			_point = new Point();
 
 			// Create context.
 			_context = ExtensionContext.createExtensionContext( "net.psykosoft.photos", null );
@@ -32,7 +37,7 @@ package net.psykosoft.photos
 		 * Must be called to initialize the extension.
 		 * Call this method so that the native part of the ANE retrieves all the user's assets
 		 * and stores it in its own memory.
-		 * The extension will trigger a UserPhotosExtensionEvent.USER_LIBRARY_READY when done.
+		 * The extension will trigger libraryReadySignal when ready.
 		 * After that, call any of the methods below.
 		 */
 		public function initialize():void {
@@ -54,24 +59,31 @@ package net.psykosoft.photos
 			return _context.call( "getNumberOfLibraryItems" ) as Number;
 		}
 
+		public function getThumbDimensionsAtIndex( index:uint ):Point {
+			var stringReply:String = _context.call( "getThumbDimensionsAtIndex", index ) as String;
+			var dump:Array = stringReply.split( "x" );
+			_point.x = dump[ 0 ];
+			_point.y = dump[ 1 ];
+			return _point;
+		}
+
 		/*
 		* Returns the dimensions of a full image at the specified index.
 		* */
 		public function getFullImageDimensionsAtIndex( index:uint ):Point {
 			var stringReply:String = _context.call( "getFullImageDimensionsAtIndex", index ) as String;
 			var dump:Array = stringReply.split( "x" );
-			return new Point(
-					Number( dump[ 0 ] ),
-					Number( dump[ 1 ] )
-			);
+			_point.x = dump[ 0 ];
+			_point.y = dump[ 1 ];
+			return _point;
 		}
 
 		/*
 		* Retrieves a single thumbnail at the specified index.
 		* */
-		// TODO: isolate thumbSize?
- 		public function getThumbnailAtIndex( index:uint, thumbSize:uint ):BitmapData {
-			var bmd:BitmapData = new BitmapData( thumbSize, thumbSize, false, 0xFF0000 );
+ 		public function getThumbnailAtIndex( index:uint, bmd:BitmapData = null ):BitmapData {
+			var dims:Point = getThumbDimensionsAtIndex( index );
+			bmd ||= new BitmapData( dims.x, dims.y, false, 0x000000 );
 			_context.call( "getThumbnailAtIndex", index, bmd );
 			return bmd;
 		}
@@ -79,74 +91,20 @@ package net.psykosoft.photos
 		/*
 		* Returns the full image at the specified index.
 		* */
-		public function getFullImageAtIndex( index:uint ):BitmapData {
-			var dimensions:Point = getFullImageDimensionsAtIndex( index );
-			var bmd:BitmapData = new BitmapData( dimensions.x, dimensions.y, false, 0xFF0000 );
+		public function getFullImageAtIndex( index:uint, bmd:BitmapData = null ):BitmapData {
+			var dims:Point = getFullImageDimensionsAtIndex( index );
+			bmd ||= new BitmapData( dims.x, dims.y, false, 0x000000 );
 			_context.call( "getFullImageAtIndex", index, bmd );
 			return bmd;
 		}
 
-		// -----------------------
-		// AS3 only interface.
-		// -----------------------
-
-		/*
-		* Given a range of thumbnail indices, produces a sprite sheet containing them.
-		* The method identifies the best sheet size for the number of requested items.
-		* */
-		public function getThumbnailSheetFromIndexToIndex( fromIndex:uint, toIndex:uint, thumbSize:uint ):SheetVO {
-
-			// Does the request make sense?
-			var totalItemsInLibrary:uint = getNumberOfLibraryItems();
-			if( toIndex > totalItemsInLibrary - 1 ) {
-				throw new Error( this, "You have requested a top index that exceeds the number of items in the library." );
-			}
-
-			// Initialize data holder.
-			var vo:SheetVO = new SheetVO();
-			vo.baseItemIndex = fromIndex;
-			vo.thumbSize = thumbSize;
-			vo.numberOfItems = toIndex - fromIndex;
-
-			// Evaluate best sheet size.
-			var sqr:uint = Math.ceil( Math.sqrt( vo.numberOfItems ) );
-			vo.sheetSize = sqr * thumbSize;
-			vo.sheetSize = getBestPowerOf2( vo.sheetSize ); // Contain within power of 2 images.
-
-			// Too many items requested?
-			if( vo.sheetSize > 2048 ) {
-				throw new Error( this, "You have requested too many items for a single sprite sheet." );
-			}
-
-			// Produce the sheet.
-			vo.bmd = getThumbnailSheet( fromIndex, toIndex, thumbSize, vo.sheetSize );
-
-			return vo;
-		}
-
-		// -----------------------
-		// Internal.
-		// -----------------------
-
 		private function onContextStatusUpdate( event:StatusEvent ):void {
-			dispatchEvent( new UserPhotosExtensionEvent( event.code, event.level ) );
-		}
-
-		private function getBestPowerOf2( value:uint ):Number {
-			var p:uint = 1;
-			while( p < value ) p <<= 1;
-			return p;
-		}
-
-		/*
-		* Produces a sprite sheet containing thumbnails from the specified index, to the specified index.
-		* The size of the sheet needs to be calculated before calling this method.
-		* */
-		private function getThumbnailSheet( fromIndex:uint, toIndex:uint, thumbSize:uint, sheetSize:uint ):BitmapData {
-			var bmd:BitmapData = new BitmapData( sheetSize, sheetSize, false, 0x00FF00 );
-//			trace( this, "getThumbnailSheet - from: " + fromIndex + ", to: " + toIndex + ", thumb size: " + thumbSize + ", sheet size: " + sheetSize );
-			_context.call( "getThumbnailSheetFromIndexToIndex", fromIndex, toIndex, thumbSize, sheetSize, bmd );
-			return bmd;
+			switch( event.code ) {
+				case "user/library/items/retrieved": {
+					libraryReadySignal.dispatch();
+					break;
+				}
+			}
 		}
 	}
 }
