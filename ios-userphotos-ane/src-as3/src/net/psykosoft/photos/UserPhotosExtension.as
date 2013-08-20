@@ -6,20 +6,17 @@ package net.psykosoft.photos
 	import flash.external.ExtensionContext;
 	import flash.geom.Point;
 
-	import org.osflash.signals.Signal;
-
 	public class UserPhotosExtension
 	{
 		private var _context:ExtensionContext;
 		private var _point:Point;
 
-		public var libraryReadySignal:Signal;
+		public var _libraryReadyCallback:Function;
 
 		public function UserPhotosExtension() {
 			super();
 
 			// Init vars.
-			libraryReadySignal = new Signal();
 			_point = new Point();
 
 			// Create context.
@@ -40,7 +37,8 @@ package net.psykosoft.photos
 		 * The extension will trigger libraryReadySignal when ready.
 		 * After that, call any of the methods below.
 		 */
-		public function initialize():void {
+		public function initialize( callback:Function ):void {
+			_libraryReadyCallback = callback;
 			_context.call( "initialize" );
 		}
 
@@ -101,7 +99,7 @@ package net.psykosoft.photos
 		private function onContextStatusUpdate( event:StatusEvent ):void {
 			switch( event.code ) {
 				case "user/library/items/retrieved": {
-					libraryReadySignal.dispatch();
+					_libraryReadyCallback();
 					break;
 				}
 			}

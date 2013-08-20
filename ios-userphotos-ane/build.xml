@@ -36,7 +36,7 @@
         </pathconvert> 
 
             <exec executable="${flexsdk}/bin/compc" failonerror="true">
-                <arg line='-source-path src-as3/src ../../as3-signals/src'/>
+                <arg line='-source-path src-as3/src'/>
                 <arg line='-output build/${extensionName}.swc'/>
                 <arg line='-swf-version=21'/>
                 <arg line='-debug=false'/>

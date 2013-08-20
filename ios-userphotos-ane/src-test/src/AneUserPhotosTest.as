@@ -9,7 +9,6 @@ package
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
-	import flash.utils.setTimeout;
 
 	import net.psykosoft.photos.UserPhotosExtension;
 
@@ -41,8 +40,7 @@ package
 
 			// Initialize extension...
 			_extension = new UserPhotosExtension();
-			_extension.libraryReadySignal.addOnce( onUserLibraryReady );
-			_extension.initialize();
+			_extension.initialize( onUserLibraryReady );
 		}
 
 		private function onUserLibraryReady():void {

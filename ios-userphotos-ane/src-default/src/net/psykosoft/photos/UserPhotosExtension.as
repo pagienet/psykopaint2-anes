@@ -10,7 +10,7 @@ package net.psykosoft.photos
 			super();
 		}
 
-		public function initialize():void {
+		public function initialize( callback:Function ):void {
 			
 		}
 
