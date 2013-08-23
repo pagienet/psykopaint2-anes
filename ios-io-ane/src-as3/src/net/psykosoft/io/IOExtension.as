@@ -38,6 +38,10 @@ package net.psykosoft.io
 			_context.call( "writeWithCompression", bytes, fileName );
 		}
 
+		public function readWithDeCompression( bytes:ByteArray, fileName:String ):void {
+			_context.call( "readWithDeCompression", bytes, fileName );
+		}
+
 		// -----------------------
 		// Internal.
 		// -----------------------

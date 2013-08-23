@@ -7,6 +7,51 @@
 
 FREContext eventContext;
 
+#pragma mark - Read from disk
+
+FREObject ioext_readWithDeCompression(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
+    
+    eventContext = ctx;
+    
+    NSLog( @"IOExtension - reading with de-compression..." );
+    
+    // Get byte array.
+    FREByteArray byteArray;
+    FREObject objectByteArray = argv[ 0 ];
+    
+    // Get file name.
+    uint32_t fileNameLength;
+    const uint8_t *fileNameRaw;
+    FREGetObjectAsUTF8( argv[ 1 ], &fileNameLength, &fileNameRaw );
+    NSString *fileName = [ NSString stringWithUTF8String:(char*)fileNameRaw ];
+    NSLog( @"IOExtension - target file name: %@", fileName );
+    
+    // Determine file path to read from.
+    NSString *finalFileName = [ NSString stringWithFormat:@"Documents/%@", fileName ];
+    NSString *filePath = [ NSHomeDirectory() stringByAppendingPathComponent:finalFileName ];
+    
+    // Unzip.
+    ZipFile *unzipFile= [ [ ZipFile alloc ] initWithFileName:filePath mode:ZipFileModeUnzip ];
+    NSArray *infos= [unzipFile listFileInZipInfos];
+    FileInZipInfo *firstInfo = infos[ 0 ];
+    [ unzipFile goToFirstFileInZip ];
+//    NSLog( @"IOExtension - file size: %u", firstInfo.length );
+    ZipReadStream *read= [ unzipFile readCurrentFileInZip ];
+    NSMutableData *buffer = [ [ NSMutableData alloc ] initWithLength: firstInfo.length ];
+    [ read readDataWithBuffer:buffer ];
+    [ read finishedReading ];
+    
+    // NSData -> ByteArray.
+    FREObject bytesLength;
+    FRENewObjectFromUint32( buffer.length, &bytesLength );
+    FRESetObjectProperty( objectByteArray, (uint8_t *)"length", bytesLength, NULL );
+    FREAcquireByteArray( objectByteArray, &byteArray );
+    memcpy( byteArray.bytes, buffer.bytes, buffer.length );
+    FREReleaseByteArray( objectByteArray );
+    
+    return NULL;
+}
+
 #pragma mark - Write to disk
 
 FREObject ioext_writeWithCompression(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
@@ -91,7 +136,7 @@ FREObject ioext_initialize(FREContext ctx, void* funcData, uint32_t argc, FREObj
 
 void IOExtensionContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet) {
     
-    *numFunctionsToTest = 3;
+    *numFunctionsToTest = 4;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * *numFunctionsToTest);
     
@@ -106,6 +151,10 @@ void IOExtensionContextInitializer(void* extData, const uint8_t* ctxType, FRECon
     func[ 2 ].name = (const uint8_t*) "writeWithCompression";
     func[ 2 ].functionData = NULL;
     func[ 2 ].function = &ioext_writeWithCompression;
+    
+    func[ 3 ].name = (const uint8_t*) "readWithDeCompression";
+    func[ 3 ].functionData = NULL;
+    func[ 3 ].function = &ioext_readWithDeCompression;
     
     /* DO NOT FORGET TO INCREASE numFunctionsToTest! - AND make sure indices are right */
     

@@ -15,6 +15,7 @@ package
 	public class AneIoTest extends Sprite
 	{
 		private var _extension:IOExtension;
+		private var _time:uint;
 
 		public function AneIoTest() {
 			super();
@@ -27,6 +28,7 @@ package
 
 		private function onInitialized():void {
 			writeTest();
+			readTest();
 		}
 
 		// ---------------------------------------------------------------------
@@ -35,7 +37,7 @@ package
 
 		private function writeTest():void {
 
-			trace( this, "write test..." );
+			log( this, "write test..." );
 
 			// Produce an image.
 			var bmd:BitmapData = new BitmapData( 2048, 1536, true, 0x00000000 );
@@ -44,23 +46,43 @@ package
 			// Bmd -> ByteArray.
 			var bytes:ByteArray = new ByteArray();
 			bmd.copyPixelsToByteArray( bmd.rect, bytes );
+			log( this, "writing: " + bytes.length + " bytes" );
 
 			// ByteArray -> PNG.
-//			var pngBytes:ByteArray = PNG24Encoder.encode( bmd );
-			var pngBytes1:ByteArray = cloneByteArray( bytes );
-			var pngBytes2:ByteArray = cloneByteArray( bytes );
+			var bytes1:ByteArray = cloneByteArray( bytes );
+			var bytes2:ByteArray = cloneByteArray( bytes );
 
 			// Test write with compression using ane.
-			var time:uint = getTimer();
-			_extension.writeWithCompression( pngBytes1, "fileWrittenByAne.jpg" );
-			log( this, "ane took: " + String( getTimer() - time ) + "ms" );
+			_time = getTimer();
+			_extension.writeWithCompression( bytes1, "fileWrittenByAne.jpg" );
+			log( this, "ane took: " + String( getTimer() - _time ) + "ms" );
 
 			// Test write with compression using as3.
-			time = getTimer();
-			var infoWriteUtil:BinaryIoUtil = new BinaryIoUtil( BinaryIoUtil.STORAGE_TYPE_IOS );
-			pngBytes2.compress();
-			infoWriteUtil.writeBytesSync( "fileWrittenByAS3.jpg", pngBytes2 );
-			log( this, "as3 took: " + String( getTimer() - time ) + "ms" );
+			_time = getTimer();
+			var as3WriteUtil:BinaryIoUtil = new BinaryIoUtil( BinaryIoUtil.STORAGE_TYPE_IOS );
+			bytes2.compress();
+			as3WriteUtil.writeBytesSync( "fileWrittenByAS3.jpg", bytes2 );
+			log( this, "as3 took: " + String( getTimer() - _time ) + "ms" );
+		}
+
+		private function readTest():void {
+
+			log( this, "read test..." );
+
+			// Test read with de-compression using ane.
+			var bytes:ByteArray = new ByteArray();
+			_time = getTimer();
+			_extension.readWithDeCompression( bytes, "fileWrittenByAne.jpg" );
+			log( this, "read ios: " + bytes.length + " bytes, took: " + String( getTimer() - _time ) + "ms" );
+
+			// Test read with de-compression using as3.
+			_time = getTimer();
+			var as3WriteUtil:BinaryIoUtil = new BinaryIoUtil( BinaryIoUtil.STORAGE_TYPE_IOS );
+			as3WriteUtil.readBytesAsync( "fileWrittenByAS3.jpg", onAs3DoneReading );
+		}
+
+		private function onAs3DoneReading( readBytes:ByteArray ):void {
+			log( this, "read as3: " + readBytes.length + " bytes, took: " + String( getTimer() - _time ) + "ms" );
 		}
 
 		// ---------------------------------------------------------------------

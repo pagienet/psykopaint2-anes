@@ -21,5 +21,8 @@ package net.psykosoft.io
 
 		public function writeWithCompression( bytes:ByteArray, fileName:String ):void {
 		}
+
+		public function readWithDeCompression( bytes:ByteArray, fileName:String ):void {
+		}
 	}
 }
