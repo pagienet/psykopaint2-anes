@@ -1,8 +1,6 @@
 package
 {
 
-	import by.blooddy.crypto.image.PNG24Encoder;
-
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.text.TextField;
@@ -23,10 +21,7 @@ package
 			initConsole();
 
 			_extension = new IOExtension();
-			_extension.initialize( onInitialized );
-		}
 
-		private function onInitialized():void {
 			writeTest();
 			readTest();
 		}
@@ -55,6 +50,7 @@ package
 			// Test write with compression using ane.
 			_time = getTimer();
 			_extension.writeWithCompression( bytes1, "fileWrittenByAne.jpg" );
+//			_extension.writeWithCompression( bytes2, "fileWrittenByAne1.jpg" );
 			log( this, "ane took: " + String( getTimer() - _time ) + "ms" );
 
 			// Test write with compression using as3.

@@ -7,7 +7,6 @@ package net.psykosoft.io
 	public class IOExtension
 	{
 		private var _context:ExtensionContext;
-		private var _onInitializedCallback:Function;
 
 		public function IOExtension() {
 			super();
@@ -16,19 +15,12 @@ package net.psykosoft.io
 			_context = ExtensionContext.createExtensionContext( "net.psykosoft.io", null );
 
 			// Listen to all status events.
-			_context.addEventListener( StatusEvent.STATUS, onContextStatusUpdate );
+//			_context.addEventListener( StatusEvent.STATUS, onContextStatusUpdate );
 		}
 
 		// -----------------------
 		// Native interface.
 		// -----------------------
-
-		public function initialize( onComplete:Function ):void {
-			_context.call( "initialize" );
-			_onInitializedCallback = onComplete;
-			_onInitializedCallback();
-			_onInitializedCallback = null;
-		}
 
 		public function write( bytes:ByteArray, fileName:String ):void {
 			_context.call( "write", bytes, fileName );

@@ -13,9 +13,6 @@ package net.psykosoft.io
 		// Native interface.
 		// -----------------------
 
-		public function initialize( onComplete:Function ):void {
-		}
-
 		public function write( bytes:ByteArray, fileName:String ):void {
 		}
 

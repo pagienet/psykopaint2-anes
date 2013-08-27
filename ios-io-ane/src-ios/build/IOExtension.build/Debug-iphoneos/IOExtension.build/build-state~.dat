@@ -1,0 +1,98 @@
+TIOExtension
+v5
+r1
+cCheck dependencies
+cProcessPCH /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/IOExtension-Prefix-dvmjxynfiabaeperviybwyienszd/IOExtension-Prefix.pch.pth IOExtension/IOExtension-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos/libIOExtension.a normal armv7
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk
+c0000000050ED385D0000000000000110
+t1357723741
+s272
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000520D367F000000000062AD10
+t1376597631
+s6466832
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c00000000520D367D00000000000015F7
+t1376597629
+s5623
+
+N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos/libIOExtension.a
+t2
+s0
+
+N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.LinkFileList
+c000000005217625500000000000000C5
+t1377264213
+s197
+
+N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.o
+t2
+s0
+
+N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension-Prefix.pch
+c000000005217611E00000000000000A3
+t1377263902
+s163
+i<Foundation/Foundation.h>
+
+N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m
+c00000000521761A8000000000000045A
+t1377264040
+s1114
+
+N/var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/IOExtension-Prefix-dvmjxynfiabaeperviybwyienszd/IOExtension-Prefix.pch.pth
+t2
+s0
+
+CBuild AST from /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesb70cbcd599c7b741^0874c6d599c7b741^---0#1#0#--18"Check dependencies36"68BD289D-0808-4C79-AD92-DECDEB9F2D50-
+
+CCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s398957013.961757
+e398957013.987363
+r1
+xCompileC
+x/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.o
+x/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection154"Compile /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m0e67f6d599c7b741^5dc3fcd599c7b741^---0#0#0#-19%DVTDocumentLocation2@162"file://localhost/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m0000000000000000^4367"CompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.o IOExtension/IOExtension.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.1 -iquote /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/IOExtension-generated-files.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/IOExtension-own-target-headers.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/IOExtension-all-target-headers.hmap -iquote /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/IOExtension-project-headers.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/DerivedSources/armv7 -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/DerivedSources -F/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos -include /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/IOExtension-Prefix-dvmjxynfiabaeperviybwyienszd/IOExtension-Prefix.pch -MMD -MT dependencies -MF /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.d --serialize-diagnostics /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.dia -c /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m -o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.o36"1067C575-0895-43C5-B184-F2B4A53F5DC1-
+
+CLibtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos/libIOExtension.a normal armv7
+s398957013.994386
+e398957014.000996
+r1
+xLibtool
+x/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos/libIOExtension.a
+xnormal
+xarmv7
+o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection163"Libtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos/libIOExtension.a normal armv709a6fed599c7b741^a24300d699c7b741^-159"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--1280"Libtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos/libIOExtension.a normal armv7    cd /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only armv7 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -L/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos -filelist /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/Objects-normal/armv7/IOExtension.LinkFileList -ObjC -framework Foundation -o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos/libIOExtension.a36"34E3755E-8EA3-4F5B-A171-BFA93C1E97FA-
+
+CProcessPCH /Users/alejandrosantander/Library/Developer/Xcode/DerivedData/IOExtension-ajdisvcqftwjzndciliozlsypnhc/Index/PrecompiledHeaders/IOExtension-Prefix-gwybkzkngltgssdfcwdyncalmhzc_ast/IOExtension-Prefix.pch.pth IOExtension/IOExtension-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/IOExtension-Prefix-dvmjxynfiabaeperviybwyienszd/IOExtension-Prefix.pch.pth IOExtension/IOExtension-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s398957013.781775
+e398957013.954490
+r1
+xProcessPCH
+x/var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/IOExtension-Prefix-dvmjxynfiabaeperviybwyienszd/IOExtension-Prefix.pch.pth
+xIOExtension/IOExtension-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Precompile IOExtension/IOExtension-Prefix.pch6d53c8d599c7b741^9f5bf4d599c7b741^---0#0#0#-19%DVTDocumentLocation2@171"file://localhost/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension-Prefix.pch0000000000000000^4104"ProcessPCH /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/IOExtension-Prefix-dvmjxynfiabaeperviybwyienszd/IOExtension-Prefix.pch.pth IOExtension/IOExtension-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.1 -iquote /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/IOExtension-generated-files.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/IOExtension-own-target-headers.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/IOExtension-all-target-headers.hmap -iquote /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/IOExtension-project-headers.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/DerivedSources/armv7 -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Debug-iphoneos/IOExtension.build/DerivedSources -F/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Debug-iphoneos --serialize-diagnostics /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/IOExtension-Prefix-dvmjxynfiabaeperviybwyienszd/IOExtension-Prefix.pch.dia -c /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension-Prefix.pch -o /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/IOExtension-Prefix-dvmjxynfiabaeperviybwyienszd/IOExtension-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/IOExtension-Prefix-dvmjxynfiabaeperviybwyienszd/IOExtension-Prefix.pch.d36"65C0155C-E39D-407E-AF47-29A2EBD6FC91-
+
