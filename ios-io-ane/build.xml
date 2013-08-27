@@ -16,7 +16,7 @@
 
     <target name="ios">
         <mkdir dir="build/ios"/> 
-        <copy file="src-ios/build/Debug-iphoneos/libIOExtension.a" todir="build/ios"/>
+        <copy file="src-ios/build/Release-iphoneos/libIOExtension.a" todir="build/ios"/>
     </target>
 
     <target name="default">
