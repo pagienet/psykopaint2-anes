@@ -5,11 +5,78 @@
 #import "../Objective-Zip/ZipWriteStream.h"
 #import "../Objective-Zip/ZipReadStream.h"
 
+#pragma mark - RGBA->BGRA swap
+
+FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
+    
+//    NSLog( @"IOExtension - ioext_mergeRgbaPerByte()..." );
+    
+    // Get byte array.
+    FREByteArray byteArray;
+    FREObject objectByteArray = argv[ 0 ];
+    FREAcquireByteArray( objectByteArray, &byteArray );
+    
+    // TODO: assert data->length == canvas.width * canvas.height * 8
+	const uint32_t len = byteArray.length / 2;
+	const uint32_t rOffset = 1;
+	const uint32_t gOffset = 2;
+	const uint32_t bOffset = 3;
+	const uint32_t aOffset = len + 3;
+	uint8_t* data = byteArray.bytes;
+    
+	for (uint32_t i = 0; i < len; i += 4) {
+		const uint8_t r = data[i + rOffset];
+		const uint8_t g = data[i + gOffset];
+		const uint8_t b = data[i + bOffset];
+		const uint8_t a = data[i + aOffset];
+        
+		data[i] = b;
+		data[i+1] = g;
+		data[i+2] = r;
+		data[i+3] = a;
+	}
+    
+    FREReleaseByteArray( objectByteArray );
+    
+    return NULL;
+}
+
+FREObject ioext_mergeRgbaPerInt(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
+    
+//    NSLog( @"IOExtension - ioext_mergeRgbaPerInt()..." );
+    
+    // Get byte array.
+    FREByteArray byteArray;
+    FREObject objectByteArray = argv[ 0 ];
+    FREAcquireByteArray( objectByteArray, &byteArray );
+    
+    const uint32_t len = byteArray.length / 2;
+	const uint32_t rOffset = 1;
+	const uint32_t gOffset = 2;
+	const uint32_t bOffset = 3;
+	const uint32_t aOffset = len + 3;
+	uint8_t* data = byteArray.bytes;
+	uint32_t* outData = (uint32_t*)data;
+    
+	for (uint32_t i = 0; i < len; i += 4) {
+		const uint8_t r = data[i + rOffset];
+		const uint8_t g = data[i + gOffset];
+		const uint8_t b = data[i + bOffset];
+		const uint8_t a = data[i + aOffset];
+        
+		*(outData++) = (b << 24) | (g << 16) | (r << 8) | a;
+	}
+    
+    FREReleaseByteArray( objectByteArray );
+    
+    return NULL;
+}
+
 #pragma mark - Read from disk
 
 FREObject ioext_read(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
  
-    NSLog( @"IOExtension - ioext_read()..." );
+//    NSLog( @"IOExtension - ioext_read()..." );
     
     // Get byte array.
     FREByteArray byteArray;
@@ -20,12 +87,12 @@ FREObject ioext_read(FREContext ctx, void* funcData, uint32_t argc, FREObject ar
     const uint8_t *fileNameRaw;
     FREGetObjectAsUTF8( argv[ 1 ], &fileNameLength, &fileNameRaw );
     NSString *fileName = [ NSString stringWithUTF8String:(char*)fileNameRaw ];
-    NSLog( @"IOExtension - ioext_read() - target file name: %@", fileName );
+//    NSLog( @"IOExtension - ioext_read() - target file name: %@", fileName );
     
     // Determine file path to read from.
     NSString *finalFileName = [ NSString stringWithFormat:@"Documents/%@", fileName ];
     NSString *filePath = [ NSHomeDirectory() stringByAppendingPathComponent:finalFileName ];
-    NSLog( @"IOExtension - ioext_read() - target file path: %@", filePath );
+//    NSLog( @"IOExtension - ioext_read() - target file path: %@", filePath );
     
     // File -> NSData.
     NSData *data = [ NSData dataWithContentsOfFile:filePath ];
@@ -43,7 +110,7 @@ FREObject ioext_read(FREContext ctx, void* funcData, uint32_t argc, FREObject ar
 
 FREObject ioext_readWithDeCompression(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
     
-    NSLog( @"IOExtension - ioext_readWithDeCompression()..." );
+//    NSLog( @"IOExtension - ioext_readWithDeCompression()..." );
     
     // Get byte array.
     FREByteArray byteArray;
@@ -54,7 +121,7 @@ FREObject ioext_readWithDeCompression(FREContext ctx, void* funcData, uint32_t a
     const uint8_t *fileNameRaw;
     FREGetObjectAsUTF8( argv[ 1 ], &fileNameLength, &fileNameRaw );
     NSString *fileName = [ NSString stringWithUTF8String:(char*)fileNameRaw ];
-    NSLog( @"IOExtension - ioext_readWithDeCompression() - target file name: %@", fileName );
+//    NSLog( @"IOExtension - ioext_readWithDeCompression() - target file name: %@", fileName );
     
     // Determine file path to read from.
     NSString *finalFileName = [ NSString stringWithFormat:@"Documents/%@", fileName ];
@@ -89,14 +156,14 @@ FREObject ioext_readWithDeCompression(FREContext ctx, void* funcData, uint32_t a
 
 FREObject ioext_writeWithCompression(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
     
-    NSLog(@"IOExtension - ioext_writeWithCompression()...");
+//    NSLog(@"IOExtension - ioext_writeWithCompression()...");
     
     // Get byte array.
     FREByteArray byteArray;
     FREObject objectByteArray = argv[ 0 ];
     FREAcquireByteArray( objectByteArray, &byteArray );
     NSData *data = [ NSData dataWithBytes:(void *)byteArray.bytes length:(NSUInteger)byteArray.length ];
-    NSLog(@"IOExtension - ioext_writeWithCompression() - bytes: %u", data.length );
+//    NSLog(@"IOExtension - ioext_writeWithCompression() - bytes: %u", data.length );
     FREReleaseByteArray( objectByteArray );
     
     // Get file name.
@@ -104,19 +171,19 @@ FREObject ioext_writeWithCompression(FREContext ctx, void* funcData, uint32_t ar
     const uint8_t *fileNameRaw;
     FREGetObjectAsUTF8( argv[ 1 ], &fileNameLength, &fileNameRaw );
     NSString *fileName = [ NSString stringWithUTF8String:(char*)fileNameRaw ];
-    NSLog(@"IOExtension - ioext_writeWithCompression() - incoming file name: %@", fileName);
+//    NSLog(@"IOExtension - ioext_writeWithCompression() - incoming file name: %@", fileName);
     
     // Determine file path to write to.
     NSString *finalFileName = [ NSString stringWithFormat:@"Documents/%@", fileName ];
-    NSLog(@"IOExtension - ioext_writeWithCompression() - finalFileName: %@", finalFileName);
+//    NSLog(@"IOExtension - ioext_writeWithCompression() - finalFileName: %@", finalFileName);
     NSString *filePath = [ NSHomeDirectory() stringByAppendingPathComponent:finalFileName ];
-    NSLog(@"IOExtension - ioext_writeWithCompression() - filePath: %@", filePath);
+//    NSLog(@"IOExtension - ioext_writeWithCompression() - filePath: %@", filePath);
     
     // Write using compression.
     ZipFile *zipFile= [ [ ZipFile alloc ] initWithFileName:filePath mode:ZipFileModeCreate ];
-    NSLog(@"IOExtension - ioext_writeWithCompression() - zipFile: %@", zipFile);
+//    NSLog(@"IOExtension - ioext_writeWithCompression() - zipFile: %@", zipFile);
     ZipWriteStream *stream= [ zipFile writeFileInZipWithName:fileName compressionLevel:ZipCompressionLevelFastest ];
-    NSLog(@"IOExtension - ioext_writeWithCompression() - stream: %@", stream);
+//    NSLog(@"IOExtension - ioext_writeWithCompression() - stream: %@", stream);
     [ stream writeData:data ];
     [ stream finishedWriting ];
     [ zipFile close ];
@@ -127,7 +194,7 @@ FREObject ioext_writeWithCompression(FREContext ctx, void* funcData, uint32_t ar
 
 FREObject ioext_write(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
     
-    NSLog(@"IOExtension - ioext_write()...");
+//    NSLog(@"IOExtension - ioext_write()...");
     
     // Get byte array.
     FREByteArray byteArray;
@@ -141,7 +208,7 @@ FREObject ioext_write(FREContext ctx, void* funcData, uint32_t argc, FREObject a
     const uint8_t *fileNameRaw;
     FREGetObjectAsUTF8( argv[ 1 ], &fileNameLength, &fileNameRaw );
     NSString *fileName = [ NSString stringWithUTF8String:(char*)fileNameRaw ];
-    NSLog(@"IOExtension - ioext_write() - incoming file name: %@", fileName);
+//    NSLog(@"IOExtension - ioext_write() - incoming file name: %@", fileName);
     
     // Determine file path to write to.
     NSString *finalFileName = [ NSString stringWithFormat:@"Documents/%@", fileName ];
@@ -157,7 +224,7 @@ FREObject ioext_write(FREContext ctx, void* funcData, uint32_t argc, FREObject a
 
 void IOExtensionContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet) {
     
-    *numFunctionsToTest = 4;
+    *numFunctionsToTest = 6;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * *numFunctionsToTest);
     
@@ -176,6 +243,14 @@ void IOExtensionContextInitializer(void* extData, const uint8_t* ctxType, FRECon
     func[ 3 ].name = (const uint8_t*) "read";
     func[ 3 ].functionData = NULL;
     func[ 3 ].function = &ioext_read;
+    
+    func[ 4 ].name = (const uint8_t*) "mergeRgbaPerByte";
+    func[ 4 ].functionData = NULL;
+    func[ 4 ].function = &ioext_mergeRgbaPerByte;
+    
+    func[ 5 ].name = (const uint8_t*) "mergeRgbaPerInt";
+    func[ 5 ].functionData = NULL;
+    func[ 5 ].function = &ioext_mergeRgbaPerInt;
     
     /* DO NOT FORGET TO INCREASE numFunctionsToTest! - AND make sure indices are right */
     

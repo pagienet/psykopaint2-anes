@@ -24,5 +24,11 @@ package net.psykosoft.io
 
 		public function readWithDeCompression( bytes:ByteArray, fileName:String ):void {
 		}
+
+		public function mergeRgbaPerByte( bytes:ByteArray ):void {
+		}
+
+		public function mergeRgbaPerInt( bytes:ByteArray ):void {
+		}
 	}
 }
