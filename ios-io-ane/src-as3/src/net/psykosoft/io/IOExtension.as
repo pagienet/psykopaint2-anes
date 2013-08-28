@@ -26,6 +26,10 @@ package net.psykosoft.io
 			_context.call( "write", bytes, fileName );
 		}
 
+		public function read( bytes:ByteArray, fileName:String ):void {
+			_context.call( "read", bytes, fileName );
+		}
+
 		public function writeWithCompression( bytes:ByteArray, fileName:String ):void {
 			_context.call( "writeWithCompression", bytes, fileName );
 		}

@@ -16,6 +16,9 @@ package net.psykosoft.io
 		public function write( bytes:ByteArray, fileName:String ):void {
 		}
 
+		public function read( bytes:ByteArray, fileName:String ):void {
+		}
+
 		public function writeWithCompression( bytes:ByteArray, fileName:String ):void {
 		}
 

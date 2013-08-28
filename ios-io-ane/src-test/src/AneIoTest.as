@@ -15,6 +15,10 @@ package
 		private var _extension:IOExtension;
 		private var _time:uint;
 
+		private const USE_COMPRESSION:Boolean = true;
+		private const AS3_FILE_NAME:String = "fileWrittenByAS3.jpg";
+		private const ANE_FILE_NAME:String = "fileWrittenByAne.jpg";
+
 		public function AneIoTest() {
 			super();
 
@@ -47,17 +51,18 @@ package
 			var bytes1:ByteArray = cloneByteArray( bytes );
 			var bytes2:ByteArray = cloneByteArray( bytes );
 
-			// Test write with compression using ane.
+			// Test write using ane.
 			_time = getTimer();
-			_extension.writeWithCompression( bytes1, "fileWrittenByAne.jpg" );
+			if( USE_COMPRESSION ) _extension.writeWithCompression( bytes1, ANE_FILE_NAME );
+			else _extension.write( bytes1, ANE_FILE_NAME );
 //			_extension.writeWithCompression( bytes2, "fileWrittenByAne1.jpg" );
 			log( this, "ane took: " + String( getTimer() - _time ) + "ms" );
 
-			// Test write with compression using as3.
+			// Test write using as3.
 			_time = getTimer();
 			var as3WriteUtil:BinaryIoUtil = new BinaryIoUtil( BinaryIoUtil.STORAGE_TYPE_IOS );
-			bytes2.compress();
-			as3WriteUtil.writeBytesSync( "fileWrittenByAS3.jpg", bytes2 );
+			if( USE_COMPRESSION ) bytes2.compress();
+			as3WriteUtil.writeBytesSync( AS3_FILE_NAME, bytes2 );
 			log( this, "as3 took: " + String( getTimer() - _time ) + "ms" );
 		}
 
@@ -65,20 +70,22 @@ package
 
 			log( this, "read test..." );
 
-			// Test read with de-compression using ane.
+			// Test read using ane.
 			var bytes:ByteArray = new ByteArray();
 			_time = getTimer();
-			_extension.readWithDeCompression( bytes, "fileWrittenByAne.jpg" );
+			if( USE_COMPRESSION ) _extension.readWithDeCompression( bytes, ANE_FILE_NAME );
+			_extension.read( bytes, ANE_FILE_NAME );
 			log( this, "read ios: " + bytes.length + " bytes, took: " + String( getTimer() - _time ) + "ms" );
 
-			// Test read with de-compression using as3.
+			// Test read using as3.
 			_time = getTimer();
 			var as3WriteUtil:BinaryIoUtil = new BinaryIoUtil( BinaryIoUtil.STORAGE_TYPE_IOS );
-			as3WriteUtil.readBytesAsync( "fileWrittenByAS3.jpg", onAs3DoneReading );
+			as3WriteUtil.readBytesAsync( AS3_FILE_NAME, onAs3DoneReading );
 		}
 
-		private function onAs3DoneReading( readBytes:ByteArray ):void {
-			log( this, "read as3: " + readBytes.length + " bytes, took: " + String( getTimer() - _time ) + "ms" );
+		private function onAs3DoneReading( bytes:ByteArray ):void {
+			if( USE_COMPRESSION ) bytes.uncompress();
+			log( this, "read as3: " + bytes.length + " bytes, took: " + String( getTimer() - _time ) + "ms" );
 		}
 
 		// ---------------------------------------------------------------------
