@@ -5,7 +5,7 @@
 #import "../Objective-Zip/ZipWriteStream.h"
 #import "../Objective-Zip/ZipReadStream.h"
 
-#pragma mark - RGBA->BGRA swap
+#pragma mark - merge rgba
 
 FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
     
@@ -17,24 +17,25 @@ FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, 
     FREAcquireByteArray( objectByteArray, &byteArray );
     
     // TODO: assert data->length == canvas.width * canvas.height * 8
+//    NSLog( @"IOExtension - ioext_mergeRgbaPerByte() - byteArray length: %u", byteArray.length );
 	const uint32_t len = byteArray.length / 2;
-	const uint32_t rOffset = 1;
-	const uint32_t gOffset = 2;
-	const uint32_t bOffset = 3;
-	const uint32_t aOffset = len + 3;
-	uint8_t* data = byteArray.bytes;
+    const uint32_t rOffset = 1;
+    const uint32_t gOffset = 2;
+    const uint32_t bOffset = 3;
+    const uint32_t aOffset = len + 3;
+    uint8_t* data = byteArray.bytes;
     
-	for (uint32_t i = 0; i < len; i += 4) {
-		const uint8_t r = data[i + rOffset];
-		const uint8_t g = data[i + gOffset];
-		const uint8_t b = data[i + bOffset];
-		const uint8_t a = data[i + aOffset];
+    for (uint32_t i = 0; i < len; i += 4) {
+        const uint8_t r = data[i + rOffset];
+        const uint8_t g = data[i + gOffset];
+        const uint8_t b = data[i + bOffset];
+        const uint8_t a = data[i + aOffset];
         
-		data[i] = b;
-		data[i+1] = g;
-		data[i+2] = r;
-		data[i+3] = a;
-	}
+        data[i] = b;
+        data[i+1] = g;
+        data[i+2] = r;
+        data[i+3] = a;
+    }
     
     FREReleaseByteArray( objectByteArray );
     
@@ -51,21 +52,17 @@ FREObject ioext_mergeRgbaPerInt(FREContext ctx, void* funcData, uint32_t argc, F
     FREAcquireByteArray( objectByteArray, &byteArray );
     
     const uint32_t len = byteArray.length / 2;
-	const uint32_t rOffset = 1;
-	const uint32_t gOffset = 2;
-	const uint32_t bOffset = 3;
-	const uint32_t aOffset = len + 3;
-	uint8_t* data = byteArray.bytes;
-	uint32_t* outData = (uint32_t*)data;
+    uint8_t* data = byteArray.bytes;
+    uint32_t* outData = (uint32_t*)data;
     
-	for (uint32_t i = 0; i < len; i += 4) {
-		const uint8_t r = data[i + rOffset];
-		const uint8_t g = data[i + gOffset];
-		const uint8_t b = data[i + bOffset];
-		const uint8_t a = data[i + aOffset];
+    for (uint32_t i = 0; i < len; i += 4) {
+        const uint8_t b = data[i];
+        const uint8_t g = data[i + 1];
+        const uint8_t r = data[i + 2];
+        const uint8_t a = data[i + len];
         
-		*(outData++) = (b << 24) | (g << 16) | (r << 8) | a;
-	}
+        *(outData++) = (a << 24) | (r << 16) | (g << 8) | b;
+    }
     
     FREReleaseByteArray( objectByteArray );
     
