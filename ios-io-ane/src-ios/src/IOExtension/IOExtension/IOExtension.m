@@ -15,9 +15,8 @@ FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, 
     FREByteArray byteArray;
     FREObject objectByteArray = argv[ 0 ];
     FREAcquireByteArray( objectByteArray, &byteArray );
-    
-    // TODO: assert data->length == canvas.width * canvas.height * 8
 //    NSLog( @"IOExtension - ioext_mergeRgbaPerByte() - byteArray length: %u", byteArray.length );
+    
 	const uint32_t len = byteArray.length / 2;
     const uint32_t rOffset = 1;
     const uint32_t gOffset = 2;
@@ -44,24 +43,30 @@ FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, 
 
 FREObject ioext_mergeRgbaPerInt(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
     
-//    NSLog( @"IOExtension - ioext_mergeRgbaPerInt()..." );
+    NSLog( @"IOExtension - ioext_mergeRgbaPerInt()..." );
     
     // Get byte array.
     FREByteArray byteArray;
     FREObject objectByteArray = argv[ 0 ];
     FREAcquireByteArray( objectByteArray, &byteArray );
+    NSLog( @"IOExtension - ioext_mergeRgbaPerInt() - byteArray length: %u", byteArray.length );
     
-    const uint32_t len = byteArray.length / 2;
-    uint8_t* data = byteArray.bytes;
-    uint32_t* outData = (uint32_t*)data;
+    const uint32_t aOffset = byteArray.length/8;
+    uint32_t* data = (uint32_t*)byteArray.bytes;
+    const uint32_t* end = data + aOffset;
     
-    for (uint32_t i = 0; i < len; i += 4) {
-        const uint8_t b = data[i];
-        const uint8_t g = data[i + 1];
-        const uint8_t r = data[i + 2];
-        const uint8_t a = data[i + len];
+    NSLog( @"IOExtension - ioext_mergeRgbaPerInt() - data[0]: %u", data[0] );
+    NSLog( @"IOExtension - ioext_mergeRgbaPerInt() - data[aOffset]: %u", data[aOffset] );
+    
+    while (data < end) {
+        const uint32_t rgbData = *data;
+        const uint32_t alphaData = data[aOffset];
+        const uint8_t r = rgbData & 0x0000ff00;
+        const uint8_t g = rgbData & 0x00ff0000;
+        const uint8_t b = rgbData & 0xff000000;
+        const uint8_t a = alphaData & 0xff000000;
         
-        *(outData++) = (a << 24) | (r << 16) | (g << 8) | b;
+        *data++ = a | (r << 8) | (g >> 8) | (b >> 24);
     }
     
     FREReleaseByteArray( objectByteArray );
