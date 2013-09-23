@@ -251,6 +251,11 @@ FREObject ioext_writeAsync(FREContext ctx, void* funcData, uint32_t argc, FREObj
         // Write without using compression.
         [ data writeToFile:filePath atomically:YES ];
         
+        // Notify.
+        NSString *eventName = @"io/ane/asyncWriteComplete";
+        const uint8_t* eventCode = (const uint8_t*) [eventName UTF8String];
+        FREDispatchStatusEventAsync( ctx, eventCode, eventCode );
+        
     });
     
     return NULL;
@@ -294,6 +299,11 @@ FREObject ioext_writeWithCompressionAsync(FREContext ctx, void* funcData, uint32
         [ stream finishedWriting ];
         [ zipFile close ];
         [ zipFile release ];
+        
+        // Notify.
+        NSString *eventName = @"io/ane/asyncWriteAndCompressComplete";
+        const uint8_t* eventCode = (const uint8_t*) [eventName UTF8String];
+        FREDispatchStatusEventAsync( ctx, eventCode, eventCode );
         
     });
     

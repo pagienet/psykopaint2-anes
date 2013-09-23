@@ -26,8 +26,6 @@ package
 
 		private function test():void {
 			writeData();
-			writeData();
-			writeData();
 		}
 
 		private function simulateData():void {
@@ -46,16 +44,19 @@ package
 			// Write.
 			if( USE_ASYNC ) {
 				log( "writing async..." );
-				if( USE_COMPRESSION ) _extension.writeWithCompressionAsync( _data, FILE_NAME );
-				else _extension.writeAsync( _data, FILE_NAME );
+				if( USE_COMPRESSION ) _extension.writeWithCompressionAsync( _data, FILE_NAME, onAsyncWriteComplete );
+				else _extension.writeAsync( _data, FILE_NAME, onAsyncWriteComplete );
 			}
 			else {
 				log( "writing sync..." );
 				if( USE_COMPRESSION ) _extension.writeWithCompression( _data, FILE_NAME );
 				else _extension.write( _data, FILE_NAME );
+				log( "done writing sync." );
 			}
+		}
 
-			log( "done writing." );
+		private function onAsyncWriteComplete():void {
+			log("done writing async.");
 		}
 
 		private function initFlowAnimation():void {

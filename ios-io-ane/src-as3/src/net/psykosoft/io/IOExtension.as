@@ -7,6 +7,8 @@ package net.psykosoft.io
 	public class IOExtension
 	{
 		private var _context:ExtensionContext;
+		private var _asyncWriteCallback:Function;
+		private var _asyncWriteWithCompressionCallback:Function;
 
 		public function IOExtension() {
 			super();
@@ -15,7 +17,7 @@ package net.psykosoft.io
 			_context = ExtensionContext.createExtensionContext( "net.psykosoft.io", null );
 
 			// Listen to all status events.
-//			_context.addEventListener( StatusEvent.STATUS, onContextStatusUpdate );
+			_context.addEventListener( StatusEvent.STATUS, onContextStatusUpdate );
 		}
 
 		// -----------------------
@@ -46,11 +48,13 @@ package net.psykosoft.io
 			_context.call( "mergeRgbaPerInt", bytes );
 		}
 
-		public function writeAsync( bytes:ByteArray, fileName:String ):void {
+		public function writeAsync( bytes:ByteArray, fileName:String, callback:Function ):void {
+			_asyncWriteCallback = callback;
 			_context.call( "writeAsync", bytes );
 		}
 
-		public function writeWithCompressionAsync( bytes:ByteArray, fileName:String ):void {
+		public function writeWithCompressionAsync( bytes:ByteArray, fileName:String, callback:Function ):void {
+			_asyncWriteWithCompressionCallback = callback;
 			_context.call( "writeWithCompressionAsync", bytes );
 		}
 
@@ -59,7 +63,22 @@ package net.psykosoft.io
 		// -----------------------
 
 		private function onContextStatusUpdate( event:StatusEvent ):void {
-//			dispatchEvent( new TestExtensionEvent( event.code, event.level ) );
+			switch( event.code ) {
+				case "io/ane/asyncWriteComplete": {
+					if( _asyncWriteCallback ) {
+						_asyncWriteCallback();
+						_asyncWriteCallback = null;
+					}
+					break;
+				}
+				case "io/ane/asyncWriteAndCompressComplete": {
+					if( _asyncWriteWithCompressionCallback ) {
+						_asyncWriteWithCompressionCallback();
+						_asyncWriteWithCompressionCallback = null;
+					}
+					break;
+				}
+			}
 		}
 	}
 }
