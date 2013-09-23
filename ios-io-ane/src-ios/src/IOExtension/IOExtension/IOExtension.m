@@ -222,11 +222,89 @@ FREObject ioext_write(FREContext ctx, void* funcData, uint32_t argc, FREObject a
     return NULL;
 }
 
+FREObject ioext_writeAsync(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
+ 
+//    NSLog(@"IOExtension - ioext_writeAsync()...");
+    
+    // Get byte array.
+    FREByteArray byteArray;
+    FREObject objectByteArray = argv[ 0 ];
+    FREAcquireByteArray( objectByteArray, &byteArray );
+    NSData *data = [ NSData dataWithBytes:(void *)byteArray.bytes length:(NSUInteger)byteArray.length ];
+    FREReleaseByteArray( objectByteArray );
+    
+    // Get file name.
+    uint32_t fileNameLength;
+    const uint8_t *fileNameRaw;
+    FREGetObjectAsUTF8( argv[ 1 ], &fileNameLength, &fileNameRaw );
+    NSString *fileName = [ NSString stringWithUTF8String:(char*)fileNameRaw ];
+    //    NSLog(@"IOExtension - ioext_writeAsync() - incoming file name: %@", fileName);
+    
+    // Determine file path to write to.
+    NSString *finalFileName = [ NSString stringWithFormat:@"Documents/%@", fileName ];
+    NSString *filePath = [ NSHomeDirectory() stringByAppendingPathComponent:finalFileName ];
+    
+    // Writing block.
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_async(queue, ^{
+        
+        // Write without using compression.
+        [ data writeToFile:filePath atomically:YES ];
+        
+    });
+    
+    return NULL;
+}
+
+FREObject ioext_writeWithCompressionAsync(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
+    
+//    NSLog(@"IOExtension - ioext_writeWithCompressionAsync()...");
+    
+    // Get byte array.
+    FREByteArray byteArray;
+    FREObject objectByteArray = argv[ 0 ];
+    FREAcquireByteArray( objectByteArray, &byteArray );
+    NSData *data = [ NSData dataWithBytes:(void *)byteArray.bytes length:(NSUInteger)byteArray.length ];
+    //    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - bytes: %u", data.length );
+    FREReleaseByteArray( objectByteArray );
+    
+    // Get file name.
+    uint32_t fileNameLength;
+    const uint8_t *fileNameRaw;
+    FREGetObjectAsUTF8( argv[ 1 ], &fileNameLength, &fileNameRaw );
+    NSString *fileName = [ NSString stringWithUTF8String:(char*)fileNameRaw ];
+    //    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - incoming file name: %@", fileName);
+    
+    // Determine file path to write to.
+    NSString *finalFileName = [ NSString stringWithFormat:@"Documents/%@", fileName ];
+    //    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - finalFileName: %@", finalFileName);
+    NSString *filePath = [ NSHomeDirectory() stringByAppendingPathComponent:finalFileName ];
+    //    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - filePath: %@", filePath);
+    
+    // Writing block.
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_async(queue, ^{
+        
+        // Write using compression.
+        ZipFile *zipFile= [ [ ZipFile alloc ] initWithFileName:filePath mode:ZipFileModeCreate ];
+        //    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - zipFile: %@", zipFile);
+        ZipWriteStream *stream= [ zipFile writeFileInZipWithName:fileName compressionLevel:ZipCompressionLevelFastest ];
+        //    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - stream: %@", stream);
+        [ stream writeData:data ];
+        [ stream finishedWriting ];
+        [ zipFile close ];
+        [ zipFile release ];
+        
+    });
+    
+    return NULL;
+}
+
 #pragma mark - AS3 bootstrap
 
 void IOExtensionContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet) {
     
-    *numFunctionsToTest = 6;
+    *numFunctionsToTest = 8;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * *numFunctionsToTest);
     
@@ -253,6 +331,14 @@ void IOExtensionContextInitializer(void* extData, const uint8_t* ctxType, FRECon
     func[ 5 ].name = (const uint8_t*) "mergeRgbaPerInt";
     func[ 5 ].functionData = NULL;
     func[ 5 ].function = &ioext_mergeRgbaPerInt;
+    
+    func[ 6 ].name = (const uint8_t*) "writeAsync";
+    func[ 6 ].functionData = NULL;
+    func[ 6 ].function = &ioext_writeAsync;
+    
+    func[ 7 ].name = (const uint8_t*) "writeWithCompressionAsync";
+    func[ 7 ].functionData = NULL;
+    func[ 7 ].function = &ioext_writeWithCompressionAsync;
     
     /* DO NOT FORGET TO INCREASE numFunctionsToTest! - AND make sure indices are right */
     

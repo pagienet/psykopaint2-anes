@@ -46,6 +46,14 @@ package net.psykosoft.io
 			_context.call( "mergeRgbaPerInt", bytes );
 		}
 
+		public function writeAsync( bytes:ByteArray, fileName:String ):void {
+			_context.call( "writeAsync", bytes );
+		}
+
+		public function writeWithCompressionAsync( bytes:ByteArray, fileName:String ):void {
+			_context.call( "writeWithCompressionAsync", bytes );
+		}
+
 		// -----------------------
 		// Internal.
 		// -----------------------
