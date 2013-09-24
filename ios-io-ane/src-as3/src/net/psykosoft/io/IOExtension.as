@@ -50,12 +50,12 @@ package net.psykosoft.io
 
 		public function writeAsync( bytes:ByteArray, fileName:String, callback:Function ):void {
 			_asyncWriteCallback = callback;
-			_context.call( "writeAsync", bytes );
+			_context.call( "writeAsync", bytes, fileName );
 		}
 
 		public function writeWithCompressionAsync( bytes:ByteArray, fileName:String, callback:Function ):void {
 			_asyncWriteWithCompressionCallback = callback;
-			_context.call( "writeWithCompressionAsync", bytes );
+			_context.call( "writeWithCompressionAsync", bytes, fileName );
 		}
 
 		// -----------------------
