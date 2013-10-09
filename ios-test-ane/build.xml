@@ -2,7 +2,7 @@
 <project name="Adobe Native Extension Packager" default="all" basedir=".">
 
     <property name="extensionName" value="TestExtension"/>
-    <property name="flexsdk" value="/Users/palebluedot/Documents/Libraries/Flex/flex-4.6.0.23201-air-3.6-asc2-preview5"/>
+    <property name="flexsdk" value="/Users/alejandrosantander/Documents/Libraries/Flex/flex_sdk_4.6.23201_with_air_sdk_3.9.960"/>
 
     <target name="all" depends="clean,init,ios,default,compileswc-as3,compileswc-default,extractswf-as3,extractswf-default,copyfiles,package"/>
 

@@ -1,4 +1,4 @@
-<extension xmlns="http://ns.adobe.com/air/extension/3.8">
+<extension xmlns="http://ns.adobe.com/air/extension/3.9">
     <id>net.psykosoft.photos</id>
     <versionNumber>0.0.3</versionNumber>
     <platforms>

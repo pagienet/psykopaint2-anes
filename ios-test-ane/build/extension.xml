@@ -1,4 +1,4 @@
-<extension xmlns="http://ns.adobe.com/air/extension/3.6">
+<extension xmlns="http://ns.adobe.com/air/extension/3.9">
     <id>net.psykosoft.test</id>
     <versionNumber>0.0.1</versionNumber>
     <platforms>
