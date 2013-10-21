@@ -6,7 +6,7 @@ FREContext notext_eventContext;
 #pragma mark - Internal
 
 void notext_notifyMemoryWarning() {
-    NSLog(@"notifynotifyMemoryWarning");
+    NSLog(@"notifyMemoryWarning");
     NSString *eventName = @"received/memory/warning";
     const uint8_t* eventCode = (const uint8_t*) [eventName UTF8String];
     FREDispatchStatusEventAsync( notext_eventContext, eventCode, eventCode );

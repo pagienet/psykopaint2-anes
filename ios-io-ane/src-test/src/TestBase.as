@@ -1,6 +1,8 @@
 package
 {
 	import flash.display.Sprite;
+	import flash.display.StageAlign;
+	import flash.display.StageScaleMode;
 	import flash.text.TextField;
 
 	import net.psykosoft.io.IOExtension;
@@ -13,7 +15,12 @@ package
 
 		public function TestBase() {
 			super();
+
+//			stage.scaleMode = StageScaleMode.NO_SCALE;
+//			stage.align = StageAlign.TOP_LEFT;
+
 			initConsole();
+
 			_extension = new IOExtension();
 		}
 
