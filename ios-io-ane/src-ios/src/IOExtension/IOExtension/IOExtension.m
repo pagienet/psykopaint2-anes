@@ -17,6 +17,10 @@ FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, 
     FREAcquireByteArray( objectByteArray, &byteArray );
 //    NSLog( @"IOExtension - ioext_mergeRgbaPerByte() - byteArray length: %u", byteArray.length );
     
+    // Get offset.
+    uint32_t dataOffset;
+    FREGetObjectAsUint32( argv[ 1 ], &dataOffset );
+    
 	const uint32_t len = byteArray.length / 2;
     const uint32_t rOffset = 1;
     const uint32_t gOffset = 2;
@@ -24,7 +28,7 @@ FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, 
     const uint32_t aOffset = len + 3;
     uint8_t* data = byteArray.bytes;
     
-    for (uint32_t i = 0; i < len; i += 4) {
+    for (uint32_t i = dataOffset; i < dataOffset + len; i += 4) {
         const uint8_t r = data[i + rOffset];
         const uint8_t g = data[i + gOffset];
         const uint8_t b = data[i + bOffset];

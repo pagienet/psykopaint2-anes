@@ -5,12 +5,12 @@ cCheck dependencies
 cProcessPCH /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.DeveloperTools/5.0-5A1413/Xcode/SharedPrecompiledHeaders/IOExtension-Prefix-gqfghdsktbejqiddboktrnbyhyab/IOExtension-Prefix.pch.pch IOExtension/IOExtension-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cProcessPCH /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.DeveloperTools/5.0-5A1413/Xcode/SharedPrecompiledHeaders/IOExtension-Prefix-ewucbvgavlhtlxhggonxcvqdanqa/IOExtension-Prefix.pch.pch IOExtension/IOExtension-Prefix.pch normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/ioapi.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/ioapi.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/unzip.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/unzip.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/zip.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/zip.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/FileInZipInfo.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/FileInZipInfo.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/ZipException.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipException.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/unzip.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/unzip.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/ZipFile.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipFile.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/ZipException.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipException.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/ZipReadStream.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipReadStream.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/ZipWriteStream.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipWriteStream.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/adler32.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/adler32.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
@@ -60,8 +60,8 @@ t1382367291
 s4837
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o
-t1382456811
-s27948
+t1382367292
+s27752
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/ZipException.o
 t1382367292
@@ -152,18 +152,8 @@ t1382367292
 s4420
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a
-t1382367292
-s498304
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ARCHelper/ARCHelper.h
-c0000000051C6DB5C000000000000052A
-t1371986780
-s1322
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/FlashRuntimeExtensions.h
-c00000000519E331A0000000000004D54
-t1369322266
-s19796
+t2
+s0
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension-Prefix.pch
 c000000005217611E00000000000000A3
@@ -171,94 +161,44 @@ t1377263902
 s163
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m
-c0000000052669DE600000000000038B7
-t1382456806
-s14519
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/crypt.h
-c0000000051C6DB5C0000000000001297
-t1371986780
-s4759
+c000000005241CC5A000000000000383C
+t1380043866
+s14396
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/ioapi.c
 c0000000051C6DB5C0000000000003052
 t1371986780
 s12370
 
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/ioapi.h
-c0000000051C6DB5C0000000000001CD8
-t1371986780
-s7384
-
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/unzip.c
 c0000000051C6DB5C000000000001182E
 t1371986780
 s71726
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/unzip.h
-c0000000051C6DB5C0000000000003BA6
-t1371986780
-s15270
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/zip.c
 c0000000051C6DB5C0000000000011F6B
 t1371986780
 s73579
 
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/MiniZip/zip.h
-c0000000051C6DB5C00000000000027DF
-t1371986780
-s10207
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/FIleInZipInfo.h
-c0000000051C6DB5C00000000000009D6
-t1371986780
-s2518
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/FileInZipInfo.h
-c0000000051C6DB5C00000000000009D6
-t1371986780
-s2518
-
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/FileInZipInfo.m
 c0000000051C6DB5C0000000000000975
 t1371986780
 s2421
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipException.h
-c0000000051C6DB5C00000000000007D2
-t1371986780
-s2002
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipException.m
 c0000000051C6DB5C0000000000000858
 t1371986780
 s2136
 
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipFile.h
-c0000000051C6DB5C0000000000000C70
-t1371986780
-s3184
-
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipFile.m
 c0000000051C6DB5C0000000000003E54
 t1371986780
 s15956
 
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipReadStream.h
-c0000000051C6DB5C000000000000080F
-t1371986780
-s2063
-
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipReadStream.m
 c0000000051C6DB5C0000000000000A55
 t1371986780
 s2645
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipWriteStream.h
-c0000000051C6DB5C00000000000007F6
-t1371986780
-s2038
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipWriteStream.m
 c0000000051C6DB5C0000000000000A23
@@ -280,30 +220,15 @@ c0000000051C6DB5C0000000000003376
 t1371986780
 s13174
 
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/crc32.h
-c0000000051C6DB5C0000000000007762
-t1371986780
-s30562
-
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/deflate.c
 c0000000051C6DB5C0000000000011734
 t1371986780
 s71476
 
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/deflate.h
-c0000000051C6DB5C00000000000031E6
-t1371986780
-s12774
-
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/gzclose.c
 c0000000051C6DB5C00000000000002A6
 t1371986780
 s678
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/gzguts.h
-c0000000051C6DB5C00000000000019F7
-t1371986780
-s6647
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/gzlib.c
 c0000000051C6DB5C000000000000401F
@@ -330,70 +255,30 @@ c0000000051C6DB5C000000000000348F
 t1371986780
 s13455
 
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/inffast.h
-c0000000051C6DB5C00000000000001AB
-t1371986780
-s427
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/inffixed.h
-c0000000051C6DB5C00000000000018BC
-t1371986780
-s6332
-
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/inflate.c
 c0000000051C6DB5C000000000000D108
 t1371986780
 s53512
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/inflate.h
-c0000000051C6DB5C00000000000018FF
-t1371986780
-s6399
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/inftrees.c
 c0000000051C6DB5C00000000000032E4
 t1371986780
 s13028
 
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/inftrees.h
-c0000000051C6DB5C0000000000000B70
-t1371986780
-s2928
-
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/trees.c
 c0000000051C6DB5C000000000000ACDF
 t1371986780
 s44255
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/trees.h
-c0000000051C6DB5C0000000000002118
-t1371986780
-s8472
 
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/uncompr.c
 c0000000051C6DB5C00000000000007D3
 t1371986780
 s2003
 
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/zconf.h
-c0000000051C6DB5C0000000000003C94
-t1371986780
-s15508
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/zlib.h
-c0000000051C6DB5C000000000001574B
-t1371986780
-s87883
-
 N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/zutil.c
 c0000000051C6DB5C0000000000001CF6
 t1371986780
 s7414
-
-N/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/ZLib/zutil.h
-c0000000051C6DB5C0000000000001A6E
-t1371986780
-s6766
 
 N/var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.DeveloperTools/5.0-5A1413/Xcode/SharedPrecompiledHeaders/IOExtension-Prefix-ewucbvgavlhtlxhggonxcvqdanqa/IOExtension-Prefix.pch.pch
 t1382367291
@@ -477,7 +362,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies6897c769d516b841^6c3fe569d516b841^---0#1#1#--18"Check dependencies36"AFB30F7E-7EE3-41FD-91D7-31E2C329B67B-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesc0777bbb7715b841^821e9abb7715b841^---0#1#1#--18"Check dependencies36"C776350D-272F-4BD7-AF93-5FE474E38B5E-
 
 CCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/FileInZipInfo.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/FileInZipInfo.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s404060092.107327
@@ -503,8 +388,8 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection158"Compil
 bE0060691-343D-45E4-B3FD-D8C4376F1D8E
 
 CCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s404149609.901240
-e404149611.030970
+s404060092.107379
+e404060092.368034
 r1
 xCompileC
 x/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o
@@ -526,8 +411,8 @@ d/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint
 d/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/FileInZipInfo.h
 d/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipWriteStream.h
 d/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipReadStream.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection154"Compile /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m307"CompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o IOExtension/IOExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerd3d8e669d516b841^0bee076bd516b841^---0#0#1#-19%DVTDocumentLocation2@162"file://localhost/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m0000000000000000^4482"CompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o IOExtension/IOExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/IOExtension-generated-files.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/IOExtension-own-target-headers.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/IOExtension-all-target-headers.hmap -iquote /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/IOExtension-project-headers.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/DerivedSources/i386 -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/DerivedSources -F/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator -include /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.DeveloperTools/5.0-5A1413/Xcode/SharedPrecompiledHeaders/IOExtension-Prefix-gqfghdsktbejqiddboktrnbyhyab/IOExtension-Prefix.pch -MMD -MT dependencies -MF /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.d --serialize-diagnostics /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.dia -c /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m -o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o36"BCD6C8E8-7FD2-404E-AB23-07A5A3195825-
-bD64E512E-F1AD-4EE6-97E5-932FC50B14CA
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection154"Compile /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m307"CompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o IOExtension/IOExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler5a9e1bbc7715b841^69375ebc7715b841^---0#0#1#-19%DVTDocumentLocation2@162"file://localhost/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m0000000000000000^4482"CompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o IOExtension/IOExtension.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wno-bool-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=6.1 -iquote /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/IOExtension-generated-files.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/IOExtension-own-target-headers.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/IOExtension-all-target-headers.hmap -iquote /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/IOExtension-project-headers.hmap -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/DerivedSources/i386 -I/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/DerivedSources -F/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator -include /var/folders/wp/mcr9djcx0_bg1r633plfnm8w0000gn/C/com.apple.DeveloperTools/5.0-5A1413/Xcode/SharedPrecompiledHeaders/IOExtension-Prefix-gqfghdsktbejqiddboktrnbyhyab/IOExtension-Prefix.pch -MMD -MT dependencies -MF /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.d --serialize-diagnostics /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.dia -c /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/IOExtension/IOExtension.m -o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.o36"830C6E61-CADF-42FF-B5B6-38A0978EE82F-
+bE0060691-343D-45E4-B3FD-D8C4376F1D8E
 
 CCompileC /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/ZipException.o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension/Objective-Zip/ZipException.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s404060092.108573
@@ -960,16 +845,16 @@ lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection141"Compil
 bE0060691-343D-45E4-B3FD-D8C4376F1D8E
 
 CLibtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a normal i386
-s404149611.062668
-e404149611.125287
+s404060092.897237
+e404060092.954743
 r1
 xLibtool
 x/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a
 xnormal
 xi386
 o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection171"Libtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a normal i386171"Libtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a normal i386782a106bd516b841^3716206bd516b841^-159"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#1#--1334"Libtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a normal i386    cd /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only i386 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator -filelist /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.LinkFileList -ObjC -framework Foundation -o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a36"6DADF9E2-01C9-4E9F-9946-0379F47407CF-
-bD64E512E-F1AD-4EE6-97E5-932FC50B14CA
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection171"Libtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a normal i386171"Libtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a normal i38640dce5bc7715b841^6a6bf4bc7715b841^-159"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#1#--1334"Libtool /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a normal i386    cd /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/src/IOExtension    setenv IPHONEOS_DEPLOYMENT_TARGET 6.1    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only i386 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator -filelist /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/IOExtension.build/Release-iphonesimulator/IOExtension.build/Objects-normal/i386/IOExtension.LinkFileList -ObjC -framework Foundation -o /Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build/Release-iphonesimulator/libIOExtension.a36"EF4D31C0-13E3-4DCA-B8D8-4C52CECA6413-
+bE0060691-343D-45E4-B3FD-D8C4376F1D8E
 
 CProcessPCH /Users/alejandrosantander/Library/Developer/Xcode/DerivedData/IOExtension-ajdisvcqftwjzndciliozlsypnhc/Index/PrecompiledHeaders/IOExtension-Prefix-dgdneltftnwxdmauhyrnxbeoghki_ast/IOExtension-Prefix.pch.pch IOExtension/IOExtension-Prefix.pch normal i386 c com.apple.compilers.llvm.clang.1_0.astbuilder
 r0
