@@ -9,6 +9,8 @@
 
 FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
     
+//    NSLog( @"IOExtension - ioext_mergeRgbaPerByte()" );
+    
     // Get offset.
     uint32_t dataOffset;
     FREGetObjectAsUint32( argv[ 1 ], &dataOffset );
@@ -24,7 +26,7 @@ FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, 
     
     const uint32_t len = specifyLength >= 0 ? specifyLength : byteArray.length / 2;
     
-    NSLog( @"IOExtension - ioext_mergeRgbaPerByte()... dataOffset: %u, specifyLength: %i, byteArray.length: %u, len: %u", dataOffset, specifyLength, byteArray.length, len );
+//    NSLog( @"IOExtension - ioext_mergeRgbaPerByte()... dataOffset: %u, specifyLength: %i, byteArray.length: %u, len: %u", dataOffset, specifyLength, byteArray.length, len );
     
     const uint32_t rOffset = 1;
     const uint32_t gOffset = 2;
@@ -51,20 +53,20 @@ FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, 
 
 FREObject ioext_mergeRgbaPerInt(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
     
-    NSLog( @"IOExtension - ioext_mergeRgbaPerInt()..." );
+//    NSLog( @"IOExtension - ioext_mergeRgbaPerInt()..." );
     
     // Get byte array.
     FREByteArray byteArray;
     FREObject objectByteArray = argv[ 0 ];
     FREAcquireByteArray( objectByteArray, &byteArray );
-    NSLog( @"IOExtension - ioext_mergeRgbaPerInt() - byteArray length: %u", byteArray.length );
+//    NSLog( @"IOExtension - ioext_mergeRgbaPerInt() - byteArray length: %u", byteArray.length );
     
     const uint32_t aOffset = byteArray.length/8;
     uint32_t* data = (uint32_t*)byteArray.bytes;
     const uint32_t* end = data + aOffset;
     
-    NSLog( @"IOExtension - ioext_mergeRgbaPerInt() - data[0]: %u", data[0] );
-    NSLog( @"IOExtension - ioext_mergeRgbaPerInt() - data[aOffset]: %u", data[aOffset] );
+//    NSLog( @"IOExtension - ioext_mergeRgbaPerInt() - data[0]: %u", data[0] );
+//    NSLog( @"IOExtension - ioext_mergeRgbaPerInt() - data[aOffset]: %u", data[aOffset] );
     
     while (data < end) {
         const uint32_t rgbData = *data;
@@ -271,14 +273,14 @@ FREObject ioext_writeAsync(FREContext ctx, void* funcData, uint32_t argc, FREObj
 
 FREObject ioext_writeWithCompressionAsync(FREContext ctx, void* funcData, uint32_t argc, FREObject argv[]) {
     
-    NSLog(@"IOExtension - ioext_writeWithCompressionAsync()...");
+//    NSLog(@"IOExtension - ioext_writeWithCompressionAsync()...");
     
     // Get byte array.
     FREByteArray byteArray;
     FREObject objectByteArray = argv[ 0 ];
     FREAcquireByteArray( objectByteArray, &byteArray );
     NSData *data = [ NSData dataWithBytes:(void *)byteArray.bytes length:(NSUInteger)byteArray.length ];
-    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - bytes: %u", data.length );
+//    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - bytes: %u", data.length );
     FREReleaseByteArray( objectByteArray );
     
     // Get file name.
@@ -286,13 +288,13 @@ FREObject ioext_writeWithCompressionAsync(FREContext ctx, void* funcData, uint32
     const uint8_t *fileNameRaw;
     FREGetObjectAsUTF8( argv[ 1 ], &fileNameLength, &fileNameRaw );
     NSString *fileName = [ NSString stringWithUTF8String:(char*)fileNameRaw ];
-    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - incoming file name: %@", fileName);
+//    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - incoming file name: %@", fileName);
     
     // Determine file path to write to.
     NSString *finalFileName = [ NSString stringWithFormat:@"Documents/%@", fileName ];
-    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - finalFileName: %@", finalFileName);
+//    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - finalFileName: %@", finalFileName);
     NSString *filePath = [ NSHomeDirectory() stringByAppendingPathComponent:finalFileName ];
-    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - filePath: %@", filePath);
+//    NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - filePath: %@", filePath);
     
     // Writing block.
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
@@ -300,9 +302,9 @@ FREObject ioext_writeWithCompressionAsync(FREContext ctx, void* funcData, uint32
         
         // Write using compression.
         ZipFile *zipFile= [ [ ZipFile alloc ] initWithFileName:filePath mode:ZipFileModeCreate ];
-        NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - zipFile: %@", zipFile);
+//        NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - zipFile: %@", zipFile);
         ZipWriteStream *stream= [ zipFile writeFileInZipWithName:fileName compressionLevel:ZipCompressionLevelFastest ];
-        NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - stream: %@", stream);
+//        NSLog(@"IOExtension - ioext_writeWithCompressionAsync() - stream: %@", stream);
         [ stream writeData:data ];
         [ stream finishedWriting ];
         [ zipFile close ];

@@ -335,8 +335,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -360,6 +361,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -369,10 +371,12 @@
 				DSTROOT = "/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IOExtension/IOExtension-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SYMROOT = "/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -382,10 +386,12 @@
 				DSTROOT = "/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IOExtension/IOExtension-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SYMROOT = "/Users/alejandrosantander/Documents/Projects/PsykoPaint/repositories/psykopaint2-anes/ios-io-ane/src-ios/build";
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};

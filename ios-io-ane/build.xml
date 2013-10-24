@@ -36,7 +36,7 @@
             <exec executable="${flexsdk}/bin/compc" failonerror="true">
                 <arg line='-source-path src-as3/src'/>
                 <arg line='-output build/${extensionName}.swc'/>
-                <arg line='-swf-version=19'/>
+                <arg line='-swf-version=22'/>
                 <arg line='-debug=false'/>
                 <arg line='-external-library-path+="${flexsdk}/frameworks/libs/air/airglobal.swc"'/>
                 <arg line='-include-classes ${classlist}'/>
@@ -57,7 +57,7 @@
             <exec executable="${flexsdk}/bin/compc" failonerror="true">
                 <arg line='-source-path src-default/src'/>
                 <arg line='-output build/${extensionName}_default.swc'/>
-                <arg line='-swf-version=19'/>
+                <arg line='-swf-version=22'/>
                 <arg line='-debug=false'/>
                 <arg line='-external-library-path+="${flexsdk}/frameworks/libs/air/airglobal.swc"'/>
                 <arg line='-include-classes ${classlist}'/>
