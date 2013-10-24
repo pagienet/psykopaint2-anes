@@ -17,7 +17,7 @@ package net.psykosoft.io
 		public function read( bytes:ByteArray, fileName:String ):void {}
 		public function writeWithCompression( bytes:ByteArray, fileName:String ):void {}
 		public function readWithDeCompression( bytes:ByteArray, fileName:String ):void {}
-		public function mergeRgbaPerByte( bytes:ByteArray ):void {}
+		public function mergeRgbaPerByte( bytes:ByteArray, offset:uint = 0, specifyLength:int = -1 ):void {}
 		public function mergeRgbaPerInt( bytes:ByteArray ):void {}
 		public function writeAsync( bytes:ByteArray, fileName:String, callback:Function ):void {}
 		public function writeWithCompressionAsync( bytes:ByteArray, fileName:String, callback:Function ):void {}

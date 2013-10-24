@@ -21,7 +21,11 @@ FREObject ioext_mergeRgbaPerByte(FREContext ctx, void* funcData, uint32_t argc, 
     uint32_t dataOffset;
     FREGetObjectAsUint32( argv[ 1 ], &dataOffset );
     
-	const uint32_t len = byteArray.length / 2;
+    // Get length.
+    int32_t specifyLength;
+    FREGetObjectAsInt32( argv[ 2 ], &specifyLength );
+    
+	const uint32_t len = specifyLength >= 0 ? specifyLength : byteArray.length / 2;
     const uint32_t rOffset = 1;
     const uint32_t gOffset = 2;
     const uint32_t bOffset = 3;

@@ -40,8 +40,8 @@ package net.psykosoft.io
 			_context.call( "readWithDeCompression", bytes, fileName );
 		}
 
-		public function mergeRgbaPerByte( bytes:ByteArray, offset:uint = 0 ):void {
-			_context.call( "mergeRgbaPerByte", bytes, offset );
+		public function mergeRgbaPerByte( bytes:ByteArray, offset:uint = 0, specifyLength:int = -1 ):void {
+			_context.call( "mergeRgbaPerByte", bytes, offset, specifyLength );
 		}
 
 		public function mergeRgbaPerInt( bytes:ByteArray ):void {
