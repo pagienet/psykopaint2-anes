@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>07D7EDD4-8A17-4D1C-9101-D47032211EE4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TestExtension</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>394C8AF8-3EA9-4AF4-8016-25AEF7C7CD55</key>
+		<string>https://github.com/psykosoft/psykopaint2-anes.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios-test-ane/src-ios/src/TestExtension/TestExtension.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>394C8AF8-3EA9-4AF4-8016-25AEF7C7CD55</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/psykosoft/psykopaint2-anes.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>394C8AF8-3EA9-4AF4-8016-25AEF7C7CD55</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>394C8AF8-3EA9-4AF4-8016-25AEF7C7CD55</string>
+			<key>IDESourceControlWCCName</key>
+			<string>psykopaint2-anes</string>
+		</dict>
+	</array>
+</dict>
+</plist>
