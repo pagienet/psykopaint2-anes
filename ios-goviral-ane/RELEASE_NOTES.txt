@@ -1,0 +1,136 @@
+v3.0.11
+-corrects edge cases where graph path may be parsed incorrectly in GVFacebookEvent
+-fixes a bug where instead of truncating overly long request dialog title parameters to the max length, the dialog would close automatically
+-facebook's response json data to a request dialog formats the list of 'to' parameter keys ("to[x]") with url-encoding to be valid json, which can be confusing.  the extension will now remove url encoding, and additionally reformat these key value pairs as an array with the key "to" where the indicies of the array are the index of the recipient, and the key is the string value of the recipient's facebook id.
+
+v3.0.10
+-update internal Facebook iOS SDK to 3.13
+-Adobe AIR SDK 4.0+ is now required (Apple doesn't accept AIR Apps with lower versions anymore)
+-adds support for FacebookAppEvent tracking (analytics/insights) via the new GVFacebookAppEvent class and logFacebookAppEvent() function
+-adds support for Facebook Custom Audience Mobile Ad ID tracking via the requestFacebookMobileAdID() function
+-adds support for displaying a facebook Page view programatically via the presentFacebookPageOrProfile() function (useful for 'Like us On Facebook' buttons)
+-adds convenience method for posting high scores to Facebook leaderboards via the postFacebookHighScore() function
+-adds convenience method for posting Facebook game achievements via the postFacebookAchievement() function
+-update internal documentation to reflect Facebook's new page design
+-fix a bug where auto complete for GVSocialServiceType may not appear to FlashDevelop users
+-fix a bug where graph request errors on iOS might show permissions denied as an error prefix even if they weren't
+
+v3.0.9
+-updates internal iOS SDK to 3.11
+-resolves an issue where the graphPath property of GVFacebookEvent may not include the full path in some use cases
+-resolves a bug where GVFacebookEvent may erroneously be cast to GVTwitterEvent
+-resolves an issue where values passed to showFacebookRequestDialog's exclude_ids parameter may not be parsed at a certain length
+
+v3.0.8
+-updates internal facebook ios sdk to 3.10
+-ios now uses native facebook feed dialog if available
+-application.xml now requires the FacebookDisplayName key.  See app.xml example
+-on ios, fixes bug where if facebook app is not installed and facebook is not active in Settings, and the user action requires an elevated publish permission, but the user presses Skip in the web dialog, an endless loop back to the app could occur waiting for permissions to be accepted
+-reduced binary size on iOS
+-removed dependency on a library that a certain third party extension had a namespace conflict with
+-pressing the 'cancel' button inside a friend request facebook window now dispatches cancel event instead of failure event
+-publishInstall() is now deprecated; extension handles facebook mobile ad install tracking automatically
+-a workaround for a bug in adobe air that causes issues with AIR+Facebook on iOS 5, is now being rejected by Apple in some cases.  isFacebookSupported() will now return false on iOS 5 temporarily until the next AIR release
+
+v3.0.7
+-updates internal ios facebook sdk to 3.7.1
+-fixes an issue that could cause connections to gamecenter to crash in ios7
+v3.0.6
+-update GoViralExample.as to show use of isEmailAvailable() function.  fail silently if this method is not checked first.
+-fix email composer may not dismiss in ios 7
+-fix for timing issue in interpreted builds when passing bitmapdata created with .draw() in the same stack
+-fix potential parsing error in large arrays in graph request responses
+-fix missing subject in emails sent on ios via generic sharing
+v3.0.5
+-fix potential hang on startup if the os kills the app and its restarted
+v3.0.4
+-update internal facebook sdk to ios 3.5.3 (for ios, fixes more new warnings in apple static analyzer)
+v3.0.3
+-update facebook internal sdks to ios 3.5.2 ((for ios, this fixes erroneous apple static analyzer warnings introduced in facebook 3.5.1)
+-getFbAccessExpiry() now returns a Number instead of Int (addresses overflow  bug for large values)
+-Facebook has dropped supported for iOS versions below 5.1.  Use isFacebookSupported() to determine if your device can use Facebook.
+-isTweetSheetAvailable() now returns false on iOS if Twitter account is not activated
+v3.0.2
+-adds publishInstall() method for facebook mobile install ads
+-adds getFbAccessExpiry() for getting facebook access token expiry time
+-fixes an issue on ios where force quitting the app, then restarting, could prevent facebook logout events from being dispatched
+-in accordance with facebook guidelines, publish permissions may no longer be specified in authenticateWithFacebook()
+-in accordance with facebook guidelines, 'forceInAppAuth' parameter has been removed
+-fixes issue with adding message data to facebook photo posts
+-adds requestNewFacebookReadPermissions() and requestNewFacebookPublishPermissions() - advanced users may add permissions to their token manually using these calls
+-adds shouldNotifyFacebookUser, facebookErrorCategoryId, facebookUserErrorMessage params to GVFacebookEvent, useful for debugging authentication issues, on iOS 6+ only
+-on iOS, updates internal facebook SDK to v3.2
+-resolves edge cases with cached tokens on ios
+-adds GoViral.goViral.isEmailAvailable() 
+-As Twitter no longer allows mobile apps to to post status thru the web ui, showTweetSheet requires iOS 5+ or an Android device with Twitter installed.
+v3.0.0
+-now requires AIR 3.5 to build
+
+-for iOS versions, iOS 6 integrated single sign on is now supported for Facebook
+
+-though not reccommended, you can now disable single-sign on and force in-app authentication with the optional third parameter of authenticateWithFacebook(readPermissions:String,writePermissions:String,forceInAppAuth:Boolean)
+
+-integrates latest facebook sdk features
+
+-for iOS, an additional FacebookAppID key is required in the application.xml.  See GettingStarted.pdf: Update Your Application Descriptor for more information
+
+-read and write permissions are now requested separately in the authenticateWithFacebook() call: i.e., authenticateWithFacebook("user_likes,publish_actions") now must be authenticateWithFacebook("user_likes","publish_actions").  See GettingStarted.pdf for more information.
+
+-when using the facebookGraphRequest method for a request requiring write permissions, those permissions must now be set as the last parameter of the facebookGraphRequest() method.  See GettingStarted.pdf for more information.
+
+-fixes issues where some dialog request callbacks did not populate the GVFacebookEvent's .data property
+
+-adds a workaround for Facebook bug that caused dialog's 'cancel' button to report a 'finish' event instead
+
+-on iOS 6, arbitrary social sharing to SMS, email, Sina Weibo, Facebook, Twitter, and other services is now enabled via the shareGenericMessage() and shareGenericMessageWithImage() methods. 
+
+-on iOS 6, native social composer views for Facebook, SinaWeibo, and Twitter are now available via the displaySocialComposer() method.  See GettingStarted.pdf for more information
+
+-fixes error parsing data returned to graph requests with a single boolean return value
+
+-adds graphPathQuery string property to GVFacebookEvent
+
+-adds the ability to set attachment filename in showEmailComposerWithBitmap
+
+v2.0.2
+-adds isGenericShareAvailable()- if this returns true (android only) you can use shareGenericMessage(subject:String,message:String,isHtml:Boolean) or shareGenericMessageWithImage(subject:String,message:String,isHtml:Boolean,image:BitmapData) to send a generic sharing intent to the OS, and the user can pick from the available apps to handle it.
+
+-if extra parameters are returned by Facebook after a request dialog, these will be returned in the event's 'jsonData' and 'data' properties.  This can be useful for determining which friends the user has chosen to share a request with.
+
+v2.0.1
+-fix for facebook access token on ios being returned with a truncated value in some cases
+-additional changes to support problems with sending oversized bitmapdata images to twitter
+v2.0.0
+-namespace changed from com.milkmangames.nativeextensions.ios to com.milkmangames.nativeextensions.  
+-requires AIR 3.3 to compile, but supports native twitter from windows or mac Flash IDEs
+-workaround bug preventing some extensions from compiling in Flash Builder with air 3.3
+-automatically resize twitter post images so large that they might cause ios to run out of memory
+-fixes bug preventing GVFacebookFriend array from being populated in event when calling requestFacebookFriends() with a field: extraParam
+-improved handling of threads on some devices
+-v1.0.7
+-full support for native ios 5 twitter features, when using air 3.3 on windows
+-fixes a bug where response event for getFacebookFriends could be dispatched twice.
+v1.0.6
+-makes the extra parameters for showFacebookFeedDialog() accessible via IDEs- was previously missing
+-improved memory handling
+v1.0.5
+-allow retrieval of current access token
+v1.0.4
+-allow optional extra parameters to be passed to showFacebookFeedDialog()
+-fixes bug that displayed empty bubbles when showing email composer with null 'to' recipients
+-adds GVFacebookEvent.FB_SESSION_INVALIDATED - dispatched when session has been cancelled, or user has uninstalled your app from Facebook
+-addresses intermittent thread error with posting bitmapdata
+v1.0.3
+-fix error that can occur while parsing facebook profile data
+v.1.0.2
+-fix compatability problem with air 3.2 for mac
+-allow deeply nested objects to be passed as params to graph request
+-fix bug when including url params directly in graphpath
+-show a spinning progress icon while dialogs are being loaded
+-add event when sessions are invalidated for facebook
+-add troubleshooting to documentation
+v1.0.1
+-fixes problems parsing email recipients when the language is non-English
+-fixes message encoding when using the basic/fallback twitter status dialog
+v1.0.0
+- initial release.
